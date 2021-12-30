@@ -1,99 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="" xml:lang="">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 6 机器学习项目实战 | Road to Machine Learning</title>
-<meta name="author" content="玩机器学习的张北海">
-<meta name="description" content="We have finished a nice book.">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 6 机器学习项目实战 | Road to Machine Learning">
-<meta property="og:type" content="book">
-<meta property="og:description" content="We have finished a nice book.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 6 机器学习项目实战 | Road to Machine Learning">
-<meta name="twitter:description" content="We have finished a nice book.">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 6 章 机器学习项目实战 | 麻麻说我们可以用 R Markdown 写书了</title>
+  <meta name="description" content="一个简单的中文书示例。" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 6 章 机器学习项目实战 | 麻麻说我们可以用 R Markdown 写书了" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="一个简单的中文书示例。" />
+  <meta name="github-repo" content="yihui/bookdown-chinese" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 6 章 机器学习项目实战 | 麻麻说我们可以用 R Markdown 写书了" />
+  
+  <meta name="twitter:description" content="一个简单的中文书示例。" />
+  
+
+<meta name="author" content="张三" />
+
+
+<meta name="date" content="2021-12-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="机器学习模型.html"/>
+<link rel="next" href="深度学习基础.html"/>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
-<body data-spy="scroll" data-target="#toc">
 
-<div class="container-fluid">
-<div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<body>
 
-    <div class="d-flex align-items-start justify-content-between">
-      <h1>
-        <a href="index.html" title="">Road to Machine Learning</a>
-      </h1>
-      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
-    </div>
 
-    <div id="main-nav" class="collapse-lg">
-      <form role="search">
-        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
 
-      <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> 机器学习学习路线图</a></li>
-<li><a class="" href="python%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">2</span> Python基础</a></li>
-<li><a class="" href="%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">3</span> 数学基础</a></li>
-<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">4</span> 机器学习基础</a></li>
-<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">5</span> 机器学习模型</a></li>
-<li><a class="active" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98.html"><span class="header-section-number">6</span> 机器学习项目实战</a></li>
-<li><a class="" href="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">7</span> 深度学习基础</a></li>
-<li><a class="" href="%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E7%AF%87.html"><span class="header-section-number">8</span> 工具和框架篇</a></li>
-<li><a class="" href="%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90.html"><span class="header-section-number">9</span> 开源项目推荐</a></li>
-<li><a class="" href="%E5%85%8D%E8%B4%B9%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD.html"><span class="header-section-number">10</span> 免费资料下载</a></li>
-<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BF%85%E8%AF%BB%E8%AE%BA%E6%96%87.html"><span class="header-section-number">11</span> 机器学习、深度学习必读论文</a></li>
-<li><a class="" href="%E8%81%94%E7%B3%BB%E4%BD%9C%E8%80%85.html"><span class="header-section-number">12</span> 联系作者</a></li>
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">中文书示例</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 机器学习学习路线图</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#学习建议"><i class="fa fa-check"></i><b>1.1</b> 学习建议</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#一些经验和建议"><i class="fa fa-check"></i><b>1.2</b> 一些经验和建议</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="python基础.html"><a href="python基础.html"><i class="fa fa-check"></i><b>2</b> Python基础</a><ul>
+<li class="chapter" data-level="2.1" data-path="python基础.html"><a href="python基础.html#python"><i class="fa fa-check"></i><b>2.1</b> Python</a></li>
+<li class="chapter" data-level="2.2" data-path="python基础.html"><a href="python基础.html#numpy"><i class="fa fa-check"></i><b>2.2</b> Numpy</a></li>
+<li class="chapter" data-level="2.3" data-path="python基础.html"><a href="python基础.html#matplotlib"><i class="fa fa-check"></i><b>2.3</b> Matplotlib</a></li>
+<li class="chapter" data-level="2.4" data-path="python基础.html"><a href="python基础.html#工具和环境"><i class="fa fa-check"></i><b>2.4</b> 工具和环境</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="数学基础.html"><a href="数学基础.html"><i class="fa fa-check"></i><b>3</b> 数学基础</a><ul>
+<li class="chapter" data-level="3.1" data-path="数学基础.html"><a href="数学基础.html#机器学习与数学"><i class="fa fa-check"></i><b>3.1</b> 机器学习与数学</a></li>
+<li class="chapter" data-level="3.2" data-path="数学基础.html"><a href="数学基础.html#统计学"><i class="fa fa-check"></i><b>3.2</b> 统计学</a></li>
+<li class="chapter" data-level="3.3" data-path="数学基础.html"><a href="数学基础.html#概率论"><i class="fa fa-check"></i><b>3.3</b> 概率论</a></li>
+<li class="chapter" data-level="3.4" data-path="数学基础.html"><a href="数学基础.html#线性代数"><i class="fa fa-check"></i><b>3.4</b> 线性代数</a></li>
+<li class="chapter" data-level="3.5" data-path="数学基础.html"><a href="数学基础.html#优化"><i class="fa fa-check"></i><b>3.5</b> 优化</a></li>
+<li class="chapter" data-level="3.6" data-path="数学基础.html"><a href="数学基础.html#工具"><i class="fa fa-check"></i><b>3.6</b> 工具</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="机器学习基础.html"><a href="机器学习基础.html"><i class="fa fa-check"></i><b>4</b> 机器学习基础</a><ul>
+<li class="chapter" data-level="4.1" data-path="机器学习基础.html"><a href="机器学习基础.html#机器学习的局限"><i class="fa fa-check"></i><b>4.1</b> 机器学习的局限</a></li>
+<li class="chapter" data-level="4.2" data-path="机器学习基础.html"><a href="机器学习基础.html#数据清理和格式化"><i class="fa fa-check"></i><b>4.2</b> 数据清理和格式化</a></li>
+<li class="chapter" data-level="4.3" data-path="机器学习基础.html"><a href="机器学习基础.html#特征工程和特征选择"><i class="fa fa-check"></i><b>4.3</b> 特征工程和特征选择</a></li>
+<li class="chapter" data-level="4.4" data-path="机器学习基础.html"><a href="机器学习基础.html#性能指标"><i class="fa fa-check"></i><b>4.4</b> 性能指标</a></li>
+<li class="chapter" data-level="4.5" data-path="机器学习基础.html"><a href="机器学习基础.html#优化方法"><i class="fa fa-check"></i><b>4.5</b> 优化方法</a></li>
+<li class="chapter" data-level="4.6" data-path="机器学习基础.html"><a href="机器学习基础.html#超参数调整"><i class="fa fa-check"></i><b>4.6</b> 超参数调整</a></li>
+<li class="chapter" data-level="4.7" data-path="机器学习基础.html"><a href="机器学习基础.html#评估最佳模型"><i class="fa fa-check"></i><b>4.7</b> 评估最佳模型</a></li>
+<li class="chapter" data-level="4.8" data-path="机器学习基础.html"><a href="机器学习基础.html#解释模型结果"><i class="fa fa-check"></i><b>4.8</b> 解释模型结果</a></li>
+<li class="chapter" data-level="4.9" data-path="机器学习基础.html"><a href="机器学习基础.html#资源推荐"><i class="fa fa-check"></i><b>4.9</b> 资源推荐</a></li>
+<li class="chapter" data-level="4.10" data-path="机器学习基础.html"><a href="机器学习基础.html#面试竞赛经验"><i class="fa fa-check"></i><b>4.10</b> 面试&amp;竞赛经验</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="机器学习模型.html"><a href="机器学习模型.html"><i class="fa fa-check"></i><b>5</b> 机器学习模型</a><ul>
+<li class="chapter" data-level="5.1" data-path="机器学习模型.html"><a href="机器学习模型.html#掌握机器学习算法的三重境界"><i class="fa fa-check"></i><b>5.1</b> 掌握机器学习算法的三重境界</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="机器学习模型.html"><a href="机器学习模型.html#完整口述机器学习模型原理"><i class="fa fa-check"></i><b>5.1.1</b> 完整口述机器学习模型原理</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="机器学习模型.html"><a href="机器学习模型.html#回归"><i class="fa fa-check"></i><b>5.2</b> 回归</a></li>
+<li class="chapter" data-level="5.3" data-path="机器学习模型.html"><a href="机器学习模型.html#决策树"><i class="fa fa-check"></i><b>5.3</b> 决策树</a></li>
+<li class="chapter" data-level="5.4" data-path="机器学习模型.html"><a href="机器学习模型.html#随机森林"><i class="fa fa-check"></i><b>5.4</b> 随机森林</a></li>
+<li class="chapter" data-level="5.5" data-path="机器学习模型.html"><a href="机器学习模型.html#聚类"><i class="fa fa-check"></i><b>5.5</b> 聚类</a></li>
+<li class="chapter" data-level="5.6" data-path="机器学习模型.html"><a href="机器学习模型.html#svm"><i class="fa fa-check"></i><b>5.6</b> SVM</a></li>
+<li class="chapter" data-level="5.7" data-path="机器学习模型.html"><a href="机器学习模型.html#神经网络"><i class="fa fa-check"></i><b>5.7</b> 神经网络</a></li>
+<li class="chapter" data-level="5.8" data-path="机器学习模型.html"><a href="机器学习模型.html#降维"><i class="fa fa-check"></i><b>5.8</b> 降维</a></li>
+<li class="chapter" data-level="5.9" data-path="机器学习模型.html"><a href="机器学习模型.html#统计学习方法"><i class="fa fa-check"></i><b>5.9</b> 统计学习方法</a></li>
+<li class="chapter" data-level="5.10" data-path="机器学习模型.html"><a href="机器学习模型.html#西瓜书"><i class="fa fa-check"></i><b>5.10</b> 西瓜书</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="机器学习项目实战.html"><a href="机器学习项目实战.html"><i class="fa fa-check"></i><b>6</b> 机器学习项目实战</a></li>
+<li class="chapter" data-level="7" data-path="深度学习基础.html"><a href="深度学习基础.html"><i class="fa fa-check"></i><b>7</b> 深度学习基础</a><ul>
+<li class="chapter" data-level="7.1" data-path="深度学习基础.html"><a href="深度学习基础.html#资源推荐-1"><i class="fa fa-check"></i><b>7.1</b> 资源推荐</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="工具和框架篇.html"><a href="工具和框架篇.html"><i class="fa fa-check"></i><b>8</b> 工具和框架篇</a><ul>
+<li class="chapter" data-level="8.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#tensorflow-vs-pytorch"><i class="fa fa-check"></i><b>8.1</b> TensorFlow VS PyTorch</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#安装问题"><i class="fa fa-check"></i><b>8.1.1</b> 安装问题</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="工具和框架篇.html"><a href="工具和框架篇.html#sklearn"><i class="fa fa-check"></i><b>8.2</b> sklearn</a></li>
+<li class="chapter" data-level="8.3" data-path="工具和框架篇.html"><a href="工具和框架篇.html#tensorflow"><i class="fa fa-check"></i><b>8.3</b> Tensorflow</a></li>
+<li class="chapter" data-level="8.4" data-path="工具和框架篇.html"><a href="工具和框架篇.html#pytorch"><i class="fa fa-check"></i><b>8.4</b> Pytorch</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#pytorch教程"><i class="fa fa-check"></i><b>8.4.1</b> Pytorch教程</a></li>
+<li class="chapter" data-level="8.4.2" data-path="工具和框架篇.html"><a href="工具和框架篇.html#算法实现"><i class="fa fa-check"></i><b>8.4.2</b> 算法实现</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="开源项目推荐.html"><a href="开源项目推荐.html"><i class="fa fa-check"></i><b>9</b> 开源项目推荐</a><ul>
+<li class="chapter" data-level="9.1" data-path="开源项目推荐.html"><a href="开源项目推荐.html#r"><i class="fa fa-check"></i><b>9.1</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="免费资料下载.html"><a href="免费资料下载.html"><i class="fa fa-check"></i><b>10</b> 免费资料下载</a></li>
+<li class="chapter" data-level="11" data-path="机器学习深度学习必读论文.html"><a href="机器学习深度学习必读论文.html"><i class="fa fa-check"></i><b>11</b> 机器学习、深度学习必读论文</a></li>
+<li class="chapter" data-level="12" data-path="联系作者.html"><a href="联系作者.html"><i class="fa fa-check"></i><b>12</b> 联系作者</a><ul>
+<li class="chapter" data-level="12.1" data-path="联系作者.html"><a href="联系作者.html#我的bilibili"><i class="fa fa-check"></i><b>12.1</b> 我的bilibili</a></li>
+<li class="chapter" data-level="12.2" data-path="联系作者.html"><a href="联系作者.html#给作者点杯咖啡"><i class="fa fa-check"></i><b>12.2</b> 给作者点杯咖啡</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">本书由 bookdown 强力驱动</a></li>
+
 </ul>
 
-        <div class="book-extra">
-          
-        </div>
       </nav>
-</div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="机器学习项目实战" class="section level1" number="6">
-<h1>
-<span class="header-section-number">6</span> 机器学习项目实战<a class="anchor" aria-label="anchor" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98"><i class="fas fa-link"></i></a>
-</h1>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">麻麻说我们可以用 R Markdown 写书了</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="机器学习项目实战" class="section level1">
+<h1><span class="header-section-number">第 6 章</span> 机器学习项目实战</h1>
 <p>We have finished a nice book.</p>
 
 </div>
-  <div class="chapter-nav">
-<div class="prev"><a href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">5</span> 机器学习模型</a></div>
-<div class="next"><a href="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">7</span> 深度学习基础</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98"><span class="header-section-number">6</span> 机器学习项目实战</a></li></ul>
+            </section>
 
-      <div class="book-extra">
-        <ul class="list-unstyled">
-          
-        </ul>
-</div>
-    </nav>
-</div>
-
-</div>
-</div> <!-- .container -->
-
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
-
-  <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Road to Machine Learning</strong>" was written by 玩机器学习的张北海. It was last built on 2021-12-30.</p>
+          </div>
+        </div>
+      </div>
+<a href="机器学习模型.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="深度学习基础.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
   </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-chinese/edit/master/05-机器学习项目实战.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
 
-  <div class="col-12 col-md-6 mt-3">
-    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
-  </div>
-
-</div></div>
-</footer>
 </body>
+
 </html>

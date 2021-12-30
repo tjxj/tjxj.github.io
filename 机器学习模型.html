@@ -1,79 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="" xml:lang="">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 机器学习模型 | Road to Machine Learning</title>
-<meta name="author" content="玩机器学习的张北海">
-<meta name="description" content="各种分类算法的优缺点收藏 | 数据分析师最常用的10个机器学习算法！回归、分类与聚类：三大方向剖解机器学习算法的优缺点（附Python和R实现）来!一起捋一捋机器学习分类算法  5.1 掌握机器学习算法的三重境界  5.1.1 完整口述机器学习模型原理 这算是基本操作了，考验逻辑思维和表达能力。 ### 手推机器学习算法原理...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 5 机器学习模型 | Road to Machine Learning">
-<meta property="og:type" content="book">
-<meta property="og:description" content="各种分类算法的优缺点收藏 | 数据分析师最常用的10个机器学习算法！回归、分类与聚类：三大方向剖解机器学习算法的优缺点（附Python和R实现）来!一起捋一捋机器学习分类算法  5.1 掌握机器学习算法的三重境界  5.1.1 完整口述机器学习模型原理 这算是基本操作了，考验逻辑思维和表达能力。 ### 手推机器学习算法原理...">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 机器学习模型 | Road to Machine Learning">
-<meta name="twitter:description" content="各种分类算法的优缺点收藏 | 数据分析师最常用的10个机器学习算法！回归、分类与聚类：三大方向剖解机器学习算法的优缺点（附Python和R实现）来!一起捋一捋机器学习分类算法  5.1 掌握机器学习算法的三重境界  5.1.1 完整口述机器学习模型原理 这算是基本操作了，考验逻辑思维和表达能力。 ### 手推机器学习算法原理...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 5 章 机器学习模型 | 麻麻说我们可以用 R Markdown 写书了</title>
+  <meta name="description" content="一个简单的中文书示例。" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 5 章 机器学习模型 | 麻麻说我们可以用 R Markdown 写书了" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="一个简单的中文书示例。" />
+  <meta name="github-repo" content="yihui/bookdown-chinese" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 5 章 机器学习模型 | 麻麻说我们可以用 R Markdown 写书了" />
+  
+  <meta name="twitter:description" content="一个简单的中文书示例。" />
+  
+
+<meta name="author" content="张三" />
+
+
+<meta name="date" content="2021-12-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="机器学习基础.html"/>
+<link rel="next" href="机器学习项目实战.html"/>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
-<body data-spy="scroll" data-target="#toc">
 
-<div class="container-fluid">
-<div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<body>
 
-    <div class="d-flex align-items-start justify-content-between">
-      <h1>
-        <a href="index.html" title="">Road to Machine Learning</a>
-      </h1>
-      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
-    </div>
 
-    <div id="main-nav" class="collapse-lg">
-      <form role="search">
-        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
 
-      <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> 机器学习学习路线图</a></li>
-<li><a class="" href="python%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">2</span> Python基础</a></li>
-<li><a class="" href="%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">3</span> 数学基础</a></li>
-<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">4</span> 机器学习基础</a></li>
-<li><a class="active" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">5</span> 机器学习模型</a></li>
-<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98.html"><span class="header-section-number">6</span> 机器学习项目实战</a></li>
-<li><a class="" href="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">7</span> 深度学习基础</a></li>
-<li><a class="" href="%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E7%AF%87.html"><span class="header-section-number">8</span> 工具和框架篇</a></li>
-<li><a class="" href="%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90.html"><span class="header-section-number">9</span> 开源项目推荐</a></li>
-<li><a class="" href="%E5%85%8D%E8%B4%B9%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD.html"><span class="header-section-number">10</span> 免费资料下载</a></li>
-<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BF%85%E8%AF%BB%E8%AE%BA%E6%96%87.html"><span class="header-section-number">11</span> 机器学习、深度学习必读论文</a></li>
-<li><a class="" href="%E8%81%94%E7%B3%BB%E4%BD%9C%E8%80%85.html"><span class="header-section-number">12</span> 联系作者</a></li>
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">中文书示例</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 机器学习学习路线图</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#学习建议"><i class="fa fa-check"></i><b>1.1</b> 学习建议</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#一些经验和建议"><i class="fa fa-check"></i><b>1.2</b> 一些经验和建议</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="python基础.html"><a href="python基础.html"><i class="fa fa-check"></i><b>2</b> Python基础</a><ul>
+<li class="chapter" data-level="2.1" data-path="python基础.html"><a href="python基础.html#python"><i class="fa fa-check"></i><b>2.1</b> Python</a></li>
+<li class="chapter" data-level="2.2" data-path="python基础.html"><a href="python基础.html#numpy"><i class="fa fa-check"></i><b>2.2</b> Numpy</a></li>
+<li class="chapter" data-level="2.3" data-path="python基础.html"><a href="python基础.html#matplotlib"><i class="fa fa-check"></i><b>2.3</b> Matplotlib</a></li>
+<li class="chapter" data-level="2.4" data-path="python基础.html"><a href="python基础.html#工具和环境"><i class="fa fa-check"></i><b>2.4</b> 工具和环境</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="数学基础.html"><a href="数学基础.html"><i class="fa fa-check"></i><b>3</b> 数学基础</a><ul>
+<li class="chapter" data-level="3.1" data-path="数学基础.html"><a href="数学基础.html#机器学习与数学"><i class="fa fa-check"></i><b>3.1</b> 机器学习与数学</a></li>
+<li class="chapter" data-level="3.2" data-path="数学基础.html"><a href="数学基础.html#统计学"><i class="fa fa-check"></i><b>3.2</b> 统计学</a></li>
+<li class="chapter" data-level="3.3" data-path="数学基础.html"><a href="数学基础.html#概率论"><i class="fa fa-check"></i><b>3.3</b> 概率论</a></li>
+<li class="chapter" data-level="3.4" data-path="数学基础.html"><a href="数学基础.html#线性代数"><i class="fa fa-check"></i><b>3.4</b> 线性代数</a></li>
+<li class="chapter" data-level="3.5" data-path="数学基础.html"><a href="数学基础.html#优化"><i class="fa fa-check"></i><b>3.5</b> 优化</a></li>
+<li class="chapter" data-level="3.6" data-path="数学基础.html"><a href="数学基础.html#工具"><i class="fa fa-check"></i><b>3.6</b> 工具</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="机器学习基础.html"><a href="机器学习基础.html"><i class="fa fa-check"></i><b>4</b> 机器学习基础</a><ul>
+<li class="chapter" data-level="4.1" data-path="机器学习基础.html"><a href="机器学习基础.html#机器学习的局限"><i class="fa fa-check"></i><b>4.1</b> 机器学习的局限</a></li>
+<li class="chapter" data-level="4.2" data-path="机器学习基础.html"><a href="机器学习基础.html#数据清理和格式化"><i class="fa fa-check"></i><b>4.2</b> 数据清理和格式化</a></li>
+<li class="chapter" data-level="4.3" data-path="机器学习基础.html"><a href="机器学习基础.html#特征工程和特征选择"><i class="fa fa-check"></i><b>4.3</b> 特征工程和特征选择</a></li>
+<li class="chapter" data-level="4.4" data-path="机器学习基础.html"><a href="机器学习基础.html#性能指标"><i class="fa fa-check"></i><b>4.4</b> 性能指标</a></li>
+<li class="chapter" data-level="4.5" data-path="机器学习基础.html"><a href="机器学习基础.html#优化方法"><i class="fa fa-check"></i><b>4.5</b> 优化方法</a></li>
+<li class="chapter" data-level="4.6" data-path="机器学习基础.html"><a href="机器学习基础.html#超参数调整"><i class="fa fa-check"></i><b>4.6</b> 超参数调整</a></li>
+<li class="chapter" data-level="4.7" data-path="机器学习基础.html"><a href="机器学习基础.html#评估最佳模型"><i class="fa fa-check"></i><b>4.7</b> 评估最佳模型</a></li>
+<li class="chapter" data-level="4.8" data-path="机器学习基础.html"><a href="机器学习基础.html#解释模型结果"><i class="fa fa-check"></i><b>4.8</b> 解释模型结果</a></li>
+<li class="chapter" data-level="4.9" data-path="机器学习基础.html"><a href="机器学习基础.html#资源推荐"><i class="fa fa-check"></i><b>4.9</b> 资源推荐</a></li>
+<li class="chapter" data-level="4.10" data-path="机器学习基础.html"><a href="机器学习基础.html#面试竞赛经验"><i class="fa fa-check"></i><b>4.10</b> 面试&amp;竞赛经验</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="机器学习模型.html"><a href="机器学习模型.html"><i class="fa fa-check"></i><b>5</b> 机器学习模型</a><ul>
+<li class="chapter" data-level="5.1" data-path="机器学习模型.html"><a href="机器学习模型.html#掌握机器学习算法的三重境界"><i class="fa fa-check"></i><b>5.1</b> 掌握机器学习算法的三重境界</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="机器学习模型.html"><a href="机器学习模型.html#完整口述机器学习模型原理"><i class="fa fa-check"></i><b>5.1.1</b> 完整口述机器学习模型原理</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="机器学习模型.html"><a href="机器学习模型.html#回归"><i class="fa fa-check"></i><b>5.2</b> 回归</a></li>
+<li class="chapter" data-level="5.3" data-path="机器学习模型.html"><a href="机器学习模型.html#决策树"><i class="fa fa-check"></i><b>5.3</b> 决策树</a></li>
+<li class="chapter" data-level="5.4" data-path="机器学习模型.html"><a href="机器学习模型.html#随机森林"><i class="fa fa-check"></i><b>5.4</b> 随机森林</a></li>
+<li class="chapter" data-level="5.5" data-path="机器学习模型.html"><a href="机器学习模型.html#聚类"><i class="fa fa-check"></i><b>5.5</b> 聚类</a></li>
+<li class="chapter" data-level="5.6" data-path="机器学习模型.html"><a href="机器学习模型.html#svm"><i class="fa fa-check"></i><b>5.6</b> SVM</a></li>
+<li class="chapter" data-level="5.7" data-path="机器学习模型.html"><a href="机器学习模型.html#神经网络"><i class="fa fa-check"></i><b>5.7</b> 神经网络</a></li>
+<li class="chapter" data-level="5.8" data-path="机器学习模型.html"><a href="机器学习模型.html#降维"><i class="fa fa-check"></i><b>5.8</b> 降维</a></li>
+<li class="chapter" data-level="5.9" data-path="机器学习模型.html"><a href="机器学习模型.html#统计学习方法"><i class="fa fa-check"></i><b>5.9</b> 统计学习方法</a></li>
+<li class="chapter" data-level="5.10" data-path="机器学习模型.html"><a href="机器学习模型.html#西瓜书"><i class="fa fa-check"></i><b>5.10</b> 西瓜书</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="机器学习项目实战.html"><a href="机器学习项目实战.html"><i class="fa fa-check"></i><b>6</b> 机器学习项目实战</a></li>
+<li class="chapter" data-level="7" data-path="深度学习基础.html"><a href="深度学习基础.html"><i class="fa fa-check"></i><b>7</b> 深度学习基础</a><ul>
+<li class="chapter" data-level="7.1" data-path="深度学习基础.html"><a href="深度学习基础.html#资源推荐-1"><i class="fa fa-check"></i><b>7.1</b> 资源推荐</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="工具和框架篇.html"><a href="工具和框架篇.html"><i class="fa fa-check"></i><b>8</b> 工具和框架篇</a><ul>
+<li class="chapter" data-level="8.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#tensorflow-vs-pytorch"><i class="fa fa-check"></i><b>8.1</b> TensorFlow VS PyTorch</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#安装问题"><i class="fa fa-check"></i><b>8.1.1</b> 安装问题</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="工具和框架篇.html"><a href="工具和框架篇.html#sklearn"><i class="fa fa-check"></i><b>8.2</b> sklearn</a></li>
+<li class="chapter" data-level="8.3" data-path="工具和框架篇.html"><a href="工具和框架篇.html#tensorflow"><i class="fa fa-check"></i><b>8.3</b> Tensorflow</a></li>
+<li class="chapter" data-level="8.4" data-path="工具和框架篇.html"><a href="工具和框架篇.html#pytorch"><i class="fa fa-check"></i><b>8.4</b> Pytorch</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#pytorch教程"><i class="fa fa-check"></i><b>8.4.1</b> Pytorch教程</a></li>
+<li class="chapter" data-level="8.4.2" data-path="工具和框架篇.html"><a href="工具和框架篇.html#算法实现"><i class="fa fa-check"></i><b>8.4.2</b> 算法实现</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="开源项目推荐.html"><a href="开源项目推荐.html"><i class="fa fa-check"></i><b>9</b> 开源项目推荐</a><ul>
+<li class="chapter" data-level="9.1" data-path="开源项目推荐.html"><a href="开源项目推荐.html#r"><i class="fa fa-check"></i><b>9.1</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="免费资料下载.html"><a href="免费资料下载.html"><i class="fa fa-check"></i><b>10</b> 免费资料下载</a></li>
+<li class="chapter" data-level="11" data-path="机器学习深度学习必读论文.html"><a href="机器学习深度学习必读论文.html"><i class="fa fa-check"></i><b>11</b> 机器学习、深度学习必读论文</a></li>
+<li class="chapter" data-level="12" data-path="联系作者.html"><a href="联系作者.html"><i class="fa fa-check"></i><b>12</b> 联系作者</a><ul>
+<li class="chapter" data-level="12.1" data-path="联系作者.html"><a href="联系作者.html#我的bilibili"><i class="fa fa-check"></i><b>12.1</b> 我的bilibili</a></li>
+<li class="chapter" data-level="12.2" data-path="联系作者.html"><a href="联系作者.html#给作者点杯咖啡"><i class="fa fa-check"></i><b>12.2</b> 给作者点杯咖啡</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">本书由 bookdown 强力驱动</a></li>
+
 </ul>
 
-        <div class="book-extra">
-          
-        </div>
       </nav>
-</div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="机器学习模型" class="section level1" number="5">
-<h1>
-<span class="header-section-number">5</span> 机器学习模型<a class="anchor" aria-label="anchor" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
-</h1>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931068&amp;idx=3&amp;sn=f0af2f3265bb0b26a132faa87b426e4c&amp;chksm=8794e8d6b0e361c06d1bc3f6807ba1be4749cb90f3f5c3dab9a9fbf80c6a2e2a8b38745a8660&amp;token=2004915986&amp;lang=en_US#rd">各种分类算法的优缺点</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931068&amp;idx=2&amp;sn=741914361660b2f1b0191bf39fcd794a&amp;chksm=8794e8d6b0e361c0df205671dd69dcaa4ec59eabdf1aeac5ae80046e1d605957e50830fc94db&amp;token=2004915986&amp;lang=en_US#rd">收藏 | 数据分析师最常用的10个机器学习算法！</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931068&amp;idx=1&amp;sn=200fdcf6c0b04461e13ebcf5e763919f&amp;chksm=8794e8d6b0e361c0507e189d9ad2cd347e37e725ff2087b109b41885f370d2dccae3096ecd79&amp;token=2004915986&amp;lang=en_US#rd">回归、分类与聚类：三大方向剖解机器学习算法的优缺点（附Python和R实现）</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931358&amp;idx=1&amp;sn=265c5319178df151d29d0cde3fb735c3&amp;chksm=8794ee34b0e367225a53a635ced51c8e4f7984ca6a8f346bac12f7586a349e89c4a1aec5db0f&amp;token=2004915986&amp;lang=en_US#rd">来!一起捋一捋机器学习分类算法</a></p>
-<div id="掌握机器学习算法的三重境界" class="section level2" number="5.1">
-<h2>
-<span class="header-section-number">5.1</span> 掌握机器学习算法的三重境界<a class="anchor" aria-label="anchor" href="#%E6%8E%8C%E6%8F%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%89%E9%87%8D%E5%A2%83%E7%95%8C"><i class="fas fa-link"></i></a>
-</h2>
-<div id="完整口述机器学习模型原理" class="section level3" number="5.1.1">
-<h3>
-<span class="header-section-number">5.1.1</span> 完整口述机器学习模型原理<a class="anchor" aria-label="anchor" href="#%E5%AE%8C%E6%95%B4%E5%8F%A3%E8%BF%B0%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86"><i class="fas fa-link"></i></a>
-</h3>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">麻麻说我们可以用 R Markdown 写书了</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="机器学习模型" class="section level1">
+<h1><span class="header-section-number">第 5 章</span> 机器学习模型</h1>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931068&amp;idx=3&amp;sn=f0af2f3265bb0b26a132faa87b426e4c&amp;chksm=8794e8d6b0e361c06d1bc3f6807ba1be4749cb90f3f5c3dab9a9fbf80c6a2e2a8b38745a8660&amp;token=2004915986&amp;lang=en_US#rd">各种分类算法的优缺点</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931068&amp;idx=2&amp;sn=741914361660b2f1b0191bf39fcd794a&amp;chksm=8794e8d6b0e361c0df205671dd69dcaa4ec59eabdf1aeac5ae80046e1d605957e50830fc94db&amp;token=2004915986&amp;lang=en_US#rd">收藏 | 数据分析师最常用的10个机器学习算法！</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931068&amp;idx=1&amp;sn=200fdcf6c0b04461e13ebcf5e763919f&amp;chksm=8794e8d6b0e361c0507e189d9ad2cd347e37e725ff2087b109b41885f370d2dccae3096ecd79&amp;token=2004915986&amp;lang=en_US#rd">回归、分类与聚类：三大方向剖解机器学习算法的优缺点（附Python和R实现）</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931358&amp;idx=1&amp;sn=265c5319178df151d29d0cde3fb735c3&amp;chksm=8794ee34b0e367225a53a635ced51c8e4f7984ca6a8f346bac12f7586a349e89c4a1aec5db0f&amp;token=2004915986&amp;lang=en_US#rd">来!一起捋一捋机器学习分类算法</a></p>
+<div id="掌握机器学习算法的三重境界" class="section level2">
+<h2><span class="header-section-number">5.1</span> 掌握机器学习算法的三重境界</h2>
+<div id="完整口述机器学习模型原理" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> 完整口述机器学习模型原理</h3>
 <p>这算是基本操作了，考验逻辑思维和表达能力。
 ### 手推机器学习算法原理
-<img src="files/%E6%89%8B%E6%8E%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86.png" width="50%">
+<img src="./files/手推机器学习算法原理.png" width="50%">
 大家在学习《统计学习方法》或《机器学习》的时候，学完一章，要做到合上书，给你一张白纸，可以把本章算法每一步写的清清楚楚。这里顺便推荐一个我觉得非常不错的机器学习视频教程：<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931339&amp;idx=1&amp;sn=6ad6da4f380acadc25d8c511364c94f0&amp;chksm=8794ee21b0e367376bd7f2e72fbc89642bc4c524dc57546bbe5f3719f8abd09bea0cbbd69fda&amp;token=2004915986&amp;lang=en_US#rd">shuhuai007大佬的《机器学习-白板推导系列》</a>，大佬用21节课，在白板上一步一步推导算法，讲的非常详细，通俗易懂。
 课程地址：</p>
 <p><a href="https://space.bilibili.com/97068901/channel/detail?cid=54167" class="uri">https://space.bilibili.com/97068901/channel/detail?cid=54167</a></p>
@@ -134,110 +233,121 @@
 <p><a href="http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648950329&amp;idx=1&amp;sn=4ed063790e872f149487fac5e5e8b826&amp;chksm=87945413b0e3dd05c2b9f677983a60c8c693fa2faf894894194896912c95dcbf6d50ededf6a6&amp;scene=21#wechat_redirect">100天搞定机器学习：写YAML配置文件</a></p>
 </div>
 </div>
-<div id="回归" class="section level2" number="5.2">
-<h2>
-<span class="header-section-number">5.2</span> 回归<a class="anchor" aria-label="anchor" href="#%E5%9B%9E%E5%BD%92"><i class="fas fa-link"></i></a>
-</h2>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931029&amp;idx=1&amp;sn=9e1bae267e5123819d4e50cc0a32e46a&amp;chksm=8794e8ffb0e361e9bd6b2787f9eb1d99ebc9fd106082e3d4dc544ad970349fc049ed9da5be2e&amp;token=2004915986&amp;lang=en_US#rd">常见的七种回归技术</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930965&amp;idx=1&amp;sn=28093bf9604138c5090959f924267c75&amp;chksm=8794e8bfb0e361a94ac9d3246c81a308ac7d57704db769ee6729653bbd6eec23acbf4cb7565e&amp;token=2004915986&amp;lang=en_US#rd">机器学习算法之岭回归、Lasso回归和ElasticNet回归</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929533&amp;idx=1&amp;sn=5f50bbc0bbebb8254a7161417a5cc842&amp;chksm=8794e6d7b0e36fc118605bd15fa1f0adf7528969c27e122d2fae1b29bff430cd300e872fcd30&amp;token=2004915986&amp;lang=en_US#rd">【机器学习系列】广义线性模型</a></p>
+<div id="回归" class="section level2">
+<h2><span class="header-section-number">5.2</span> 回归</h2>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931029&amp;idx=1&amp;sn=9e1bae267e5123819d4e50cc0a32e46a&amp;chksm=8794e8ffb0e361e9bd6b2787f9eb1d99ebc9fd106082e3d4dc544ad970349fc049ed9da5be2e&amp;token=2004915986&amp;lang=en_US#rd">常见的七种回归技术</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930965&amp;idx=1&amp;sn=28093bf9604138c5090959f924267c75&amp;chksm=8794e8bfb0e361a94ac9d3246c81a308ac7d57704db769ee6729653bbd6eec23acbf4cb7565e&amp;token=2004915986&amp;lang=en_US#rd">机器学习算法之岭回归、Lasso回归和ElasticNet回归</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929533&amp;idx=1&amp;sn=5f50bbc0bbebb8254a7161417a5cc842&amp;chksm=8794e6d7b0e36fc118605bd15fa1f0adf7528969c27e122d2fae1b29bff430cd300e872fcd30&amp;token=2004915986&amp;lang=en_US#rd">【机器学习系列】广义线性模型</a></p>
 </div>
-<div id="决策树" class="section level2" number="5.3">
-<h2>
-<span class="header-section-number">5.3</span> 决策树<a class="anchor" aria-label="anchor" href="#%E5%86%B3%E7%AD%96%E6%A0%91"><i class="fas fa-link"></i></a>
-</h2>
+<div id="决策树" class="section level2">
+<h2><span class="header-section-number">5.3</span> 决策树</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929760&amp;idx=1&amp;sn=29462c67f3e40f25d1a3568564b4f9af&amp;chksm=8794e7cab0e36edcbf8e672538bbcb2a71b89bba822f25695fd225a5d0e03b2b1f388c067b98#rd">决策树（Decision Tree）ID3算法</a>
-<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929781&amp;idx=1&amp;sn=16b79e92eb2eb8b336611b68db040d7d&amp;chksm=8794e7dfb0e36ec95a10b9d13953dcfc44a80b7ae6c696d6a209a3195260c3b58743dcf315b9&amp;token=2004915986&amp;lang=en_US#rd">决策树（Decision Tree）C4.5算法</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929784&amp;idx=1&amp;sn=38804009384eac87d4275422f8859a1f&amp;chksm=8794e7d2b0e36ec4fc2941a7e104a64109cb2ca11da86183d766a4774b97b6b5a9e88f531676&amp;token=2004915986&amp;lang=en_US#rd">决策树（Decision Tree）CART算法</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929674&amp;idx=1&amp;sn=493940b84e49321d00cedb9b8a100fe1&amp;chksm=8794e7a0b0e36eb6017a1b61316070f1d1d539a901d64fc731dca54623c549177a149bd76c2e&amp;token=2004915986&amp;lang=en_US#rd">【算法系列】决策树</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929744&amp;idx=1&amp;sn=c5ac7424af801c2dde1630b056bdff93&amp;chksm=8794e7fab0e36eeceaa7f746adac0c3963e5691664b456855da758b46832d16e603a9e642ac4&amp;token=2004915986&amp;lang=en_US#rd">ID3、C4.5、CART三种决策树的区别</a>
-<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931076&amp;idx=1&amp;sn=d7d0aa69bde1d2a23fefe0dd519edc4b&amp;chksm=8794e92eb0e3603819cc6cc88e7820f3cf926a98fe67719656c4394762d1ef446c9c0c2b0790&amp;token=2004915986&amp;lang=en_US#rd">[最全整理]关于决策树的一切</a><br>
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929781&amp;idx=1&amp;sn=16b79e92eb2eb8b336611b68db040d7d&amp;chksm=8794e7dfb0e36ec95a10b9d13953dcfc44a80b7ae6c696d6a209a3195260c3b58743dcf315b9&amp;token=2004915986&amp;lang=en_US#rd">决策树（Decision Tree）C4.5算法</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929784&amp;idx=1&amp;sn=38804009384eac87d4275422f8859a1f&amp;chksm=8794e7d2b0e36ec4fc2941a7e104a64109cb2ca11da86183d766a4774b97b6b5a9e88f531676&amp;token=2004915986&amp;lang=en_US#rd">决策树（Decision Tree）CART算法</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929674&amp;idx=1&amp;sn=493940b84e49321d00cedb9b8a100fe1&amp;chksm=8794e7a0b0e36eb6017a1b61316070f1d1d539a901d64fc731dca54623c549177a149bd76c2e&amp;token=2004915986&amp;lang=en_US#rd">【算法系列】决策树</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929744&amp;idx=1&amp;sn=c5ac7424af801c2dde1630b056bdff93&amp;chksm=8794e7fab0e36eeceaa7f746adac0c3963e5691664b456855da758b46832d16e603a9e642ac4&amp;token=2004915986&amp;lang=en_US#rd">ID3、C4.5、CART三种决策树的区别</a>
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931076&amp;idx=1&amp;sn=d7d0aa69bde1d2a23fefe0dd519edc4b&amp;chksm=8794e92eb0e3603819cc6cc88e7820f3cf926a98fe67719656c4394762d1ef446c9c0c2b0790&amp;token=2004915986&amp;lang=en_US#rd">[最全整理]关于决策树的一切</a><br />
 ## 主成分分析
-<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929476&amp;idx=1&amp;sn=633bf80ee50c007db430dfae6ea74a9b&amp;chksm=8794e6eeb0e36ff839d0e3e282dd097435307695cf0ebf1bcdc09ad317aca46d60fcd6e743d6&amp;token=2004915986&amp;lang=en_US#rd">【算法系列】主成分分析的数学模型</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929490&amp;idx=1&amp;sn=abf9f68fe49ae17e13440a9e2960f601&amp;chksm=8794e6f8b0e36fee487f9e03a1a3a5b8f2d639efa35263153f7bd1b79bd0f4be2c7bb1f465e3&amp;token=2004915986&amp;lang=en_US#rd">【算法系列】主成分分析的几何意义</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929529&amp;idx=1&amp;sn=37933d662ad7a576cb25de3b154f1ace&amp;chksm=8794e6d3b0e36fc5ecba42b4a6af9e2f3af9ee7661610d3729844146c334ee07d0d3a0469a26&amp;token=2004915986&amp;lang=en_US#rd">【算法系列】主成分分析的推导过程</a></p>
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929476&amp;idx=1&amp;sn=633bf80ee50c007db430dfae6ea74a9b&amp;chksm=8794e6eeb0e36ff839d0e3e282dd097435307695cf0ebf1bcdc09ad317aca46d60fcd6e743d6&amp;token=2004915986&amp;lang=en_US#rd">【算法系列】主成分分析的数学模型</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929490&amp;idx=1&amp;sn=abf9f68fe49ae17e13440a9e2960f601&amp;chksm=8794e6f8b0e36fee487f9e03a1a3a5b8f2d639efa35263153f7bd1b79bd0f4be2c7bb1f465e3&amp;token=2004915986&amp;lang=en_US#rd">【算法系列】主成分分析的几何意义</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929529&amp;idx=1&amp;sn=37933d662ad7a576cb25de3b154f1ace&amp;chksm=8794e6d3b0e36fc5ecba42b4a6af9e2f3af9ee7661610d3729844146c334ee07d0d3a0469a26&amp;token=2004915986&amp;lang=en_US#rd">【算法系列】主成分分析的推导过程</a></p>
 </div>
-<div id="随机森林" class="section level2" number="5.4">
-<h2>
-<span class="header-section-number">5.4</span> 随机森林<a class="anchor" aria-label="anchor" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97"><i class="fas fa-link"></i></a>
-</h2>
+<div id="随机森林" class="section level2">
+<h2><span class="header-section-number">5.4</span> 随机森林</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929705&amp;idx=1&amp;sn=c3ab83bdb048c595277fe2d1885a2a8c&amp;chksm=8794e783b0e36e956262065dda46cc0626829efb40ef66fcf0e31b34ed9f93b1188f05465502&amp;token=2004915986&amp;lang=en_US#rd">随机森林算法入门(python)</a></p>
 </div>
-<div id="聚类" class="section level2" number="5.5">
-<h2>
-<span class="header-section-number">5.5</span> 聚类<a class="anchor" aria-label="anchor" href="#%E8%81%9A%E7%B1%BB"><i class="fas fa-link"></i></a>
-</h2>
+<div id="聚类" class="section level2">
+<h2><span class="header-section-number">5.5</span> 聚类</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929684&amp;idx=1&amp;sn=7099ebc2af8f0fe3f915934a9d7ac4b4&amp;chksm=8794e7beb0e36ea8740fcf1ed5c4081c945b98cbec109c6f7af65235657b78975c3edc8a041d&amp;token=2004915986&amp;lang=en_US#rd">如何正确使用「K均值聚类」？</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929706&amp;idx=2&amp;sn=caeb2d691717b77c2973836307346ec5&amp;chksm=8794e780b0e36e960013c3b19558d86a1eae1004f2616b25b03a63bc61f54709cb70f6041634&amp;token=2004915986&amp;lang=en_US#rd">四种聚类方法之比较</a></p>
 </div>
-<div id="svm" class="section level2" number="5.6">
-<h2>
-<span class="header-section-number">5.6</span> SVM<a class="anchor" aria-label="anchor" href="#svm"><i class="fas fa-link"></i></a>
-</h2>
+<div id="svm" class="section level2">
+<h2><span class="header-section-number">5.6</span> SVM</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929573&amp;idx=1&amp;sn=26e57d49ae4ed58bae60a6eafa3429ff&amp;chksm=8794e70fb0e36e19d1524331bdd6493781f1e16c15e72fde08a85ec451de95f5715cf53d44ee&amp;token=2004915986&amp;lang=en_US#rd">SVM的数学推导原理</a></p>
 </div>
-<div id="神经网络" class="section level2" number="5.7">
-<h2>
-<span class="header-section-number">5.7</span> 神经网络<a class="anchor" aria-label="anchor" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><i class="fas fa-link"></i></a>
-</h2>
+<div id="神经网络" class="section level2">
+<h2><span class="header-section-number">5.7</span> 神经网络</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931273&amp;idx=2&amp;sn=e6d3ba0ab1989daebe6a421b7203368f&amp;chksm=8794e9e3b0e360f50569c807473b10b1f4320020e454a1e7e7340a1301f86efb898be9d87bd9&amp;token=2004915986&amp;lang=en_US#rd">无公式理解反向传播算法之精髓</a></p>
 </div>
-<div id="降维" class="section level2" number="5.8">
-<h2>
-<span class="header-section-number">5.8</span> 降维<a class="anchor" aria-label="anchor" href="#%E9%99%8D%E7%BB%B4"><i class="fas fa-link"></i></a>
-</h2>
+<div id="降维" class="section level2">
+<h2><span class="header-section-number">5.8</span> 降维</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930946&amp;idx=2&amp;sn=a63d6a17b2453503cab9931f34901180&amp;chksm=8794e8a8b0e361be0db55490548d9cc32097f23f97db0a368c302da453d29595b1354dd4002c&amp;token=2004915986&amp;lang=en_US#rd">Word2Vec是如何工作的？它和LDA有什么区别与联系？</a></p>
 </div>
-<div id="统计学习方法" class="section level2" number="5.9">
-<h2>
-<span class="header-section-number">5.9</span> 统计学习方法<a class="anchor" aria-label="anchor" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
-</h2>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931603&amp;idx=1&amp;sn=5a2e403d148aca27965f73ad5fc86652&amp;chksm=8794ef39b0e3662f206b9ddbd83afa82fa74eefc81b40f969fcfde927eb926eb7f261733baec&amp;token=2004915986&amp;lang=en_US#rd">墙裂推荐！统计学习方法(第2版) [笔记, 代码]</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931510&amp;idx=1&amp;sn=37c84511b7393b49a8a962406e710a62&amp;chksm=8794ee9cb0e3678a30a999967480aeae63e030d5053404ff39c802ce6c3f3d2c18027c5e2b18&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P2：感知机数学推导</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931510&amp;idx=2&amp;sn=053627863cbf285fd5d0490438f2d791&amp;chksm=8794ee9cb0e3678af19e46241568ffaea77dab4b6cc0ddd3e74204df4d6ec2df442cea64825a&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P3：k-NN数学推导</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931497&amp;idx=2&amp;sn=7db5b2b2859711228ad88ef212bc521e&amp;chksm=8794ee83b0e36795ba715e1fcd21b2ab1b2632042b52504cd05ab016e403fe3b40d98bddc925&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P4：朴素贝叶斯公式推导</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931520&amp;idx=1&amp;sn=16e9a254bc6bbcafdd11a762f5a14562&amp;chksm=8794eeeab0e367fccffb13741bd7c825880e1e653a217086ef49c84b15553a42a66fb2f7170c&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P5：决策树公式推导</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931539&amp;idx=2&amp;sn=3c3688e38cf78e555bb3918707b48851&amp;chksm=8794eef9b0e367efd6b6e5e9490c0ed7ebc6d542261a939f9b37793242c90c99b578291ee017&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P6：逻辑回归算法推导</a></p>
+<div id="统计学习方法" class="section level2">
+<h2><span class="header-section-number">5.9</span> 统计学习方法</h2>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931603&amp;idx=1&amp;sn=5a2e403d148aca27965f73ad5fc86652&amp;chksm=8794ef39b0e3662f206b9ddbd83afa82fa74eefc81b40f969fcfde927eb926eb7f261733baec&amp;token=2004915986&amp;lang=en_US#rd">墙裂推荐！统计学习方法(第2版) [笔记, 代码]</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931510&amp;idx=1&amp;sn=37c84511b7393b49a8a962406e710a62&amp;chksm=8794ee9cb0e3678a30a999967480aeae63e030d5053404ff39c802ce6c3f3d2c18027c5e2b18&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P2：感知机数学推导</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931510&amp;idx=2&amp;sn=053627863cbf285fd5d0490438f2d791&amp;chksm=8794ee9cb0e3678af19e46241568ffaea77dab4b6cc0ddd3e74204df4d6ec2df442cea64825a&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P3：k-NN数学推导</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931497&amp;idx=2&amp;sn=7db5b2b2859711228ad88ef212bc521e&amp;chksm=8794ee83b0e36795ba715e1fcd21b2ab1b2632042b52504cd05ab016e403fe3b40d98bddc925&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P4：朴素贝叶斯公式推导</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931520&amp;idx=1&amp;sn=16e9a254bc6bbcafdd11a762f5a14562&amp;chksm=8794eeeab0e367fccffb13741bd7c825880e1e653a217086ef49c84b15553a42a66fb2f7170c&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P5：决策树公式推导</a><br />
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931539&amp;idx=2&amp;sn=3c3688e38cf78e555bb3918707b48851&amp;chksm=8794eef9b0e367efd6b6e5e9490c0ed7ebc6d542261a939f9b37793242c90c99b578291ee017&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P6：逻辑回归算法推导</a></p>
 </div>
-<div id="西瓜书" class="section level2" number="5.10">
-<h2>
-<span class="header-section-number">5.10</span> 西瓜书<a class="anchor" aria-label="anchor" href="#%E8%A5%BF%E7%93%9C%E4%B9%A6"><i class="fas fa-link"></i></a>
-</h2>
+<div id="西瓜书" class="section level2">
+<h2><span class="header-section-number">5.10</span> 西瓜书</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931766&amp;idx=1&amp;sn=8d819ff1d7b2aa9499ef71e906dc129f&amp;chksm=8794ef9cb0e3668a85bfa725c77b7ca93aa586863b6acf07a37effcb13c1970f67be800fbabd&amp;token=2004915986&amp;lang=en_US#rd">《机器学习》周志华西瓜书 笔记/习题答案</a></p>
 
 </div>
 </div>
-  <div class="chapter-nav">
-<div class="prev"><a href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">4</span> 机器学习基础</a></div>
-<div class="next"><a href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98.html"><span class="header-section-number">6</span> 机器学习项目实战</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B"><span class="header-section-number">5</span> 机器学习模型</a></li>
-<li>
-<a class="nav-link" href="#%E6%8E%8C%E6%8F%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%89%E9%87%8D%E5%A2%83%E7%95%8C"><span class="header-section-number">5.1</span> 掌握机器学习算法的三重境界</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E5%8F%A3%E8%BF%B0%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86"><span class="header-section-number">5.1.1</span> 完整口述机器学习模型原理</a></li></ul>
-</li>
-<li><a class="nav-link" href="#%E5%9B%9E%E5%BD%92"><span class="header-section-number">5.2</span> 回归</a></li>
-<li><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91"><span class="header-section-number">5.3</span> 决策树</a></li>
-<li><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97"><span class="header-section-number">5.4</span> 随机森林</a></li>
-<li><a class="nav-link" href="#%E8%81%9A%E7%B1%BB"><span class="header-section-number">5.5</span> 聚类</a></li>
-<li><a class="nav-link" href="#svm"><span class="header-section-number">5.6</span> SVM</a></li>
-<li><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="header-section-number">5.7</span> 神经网络</a></li>
-<li><a class="nav-link" href="#%E9%99%8D%E7%BB%B4"><span class="header-section-number">5.8</span> 降维</a></li>
-<li><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="header-section-number">5.9</span> 统计学习方法</a></li>
-<li><a class="nav-link" href="#%E8%A5%BF%E7%93%9C%E4%B9%A6"><span class="header-section-number">5.10</span> 西瓜书</a></li>
-</ul>
+            </section>
 
-      <div class="book-extra">
-        <ul class="list-unstyled">
-          
-        </ul>
-</div>
-    </nav>
-</div>
-
-</div>
-</div> <!-- .container -->
-
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
-
-  <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Road to Machine Learning</strong>" was written by 玩机器学习的张北海. It was last built on 2021-12-30.</p>
+          </div>
+        </div>
+      </div>
+<a href="机器学习基础.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="机器学习项目实战.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
   </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-chinese/edit/master/04-机器学习模型.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
 
-  <div class="col-12 col-md-6 mt-3">
-    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
-  </div>
-
-</div></div>
-</footer>
 </body>
+
 </html>

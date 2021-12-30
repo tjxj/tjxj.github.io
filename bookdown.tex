@@ -1,78 +1,116 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-%
-\documentclass[
-]{book}
-\title{Road to Machine Learning}
-\author{玩机器学习的张北海}
-\date{2021-12-30}
-
-\usepackage{amsmath,amssymb}
+\documentclass[]{ctexbook}
 \usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
-% Use upquote if available, for straight quotes in verbatim environments
+% use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage[b5paper,tmargin=2.5cm,bmargin=2.5cm,lmargin=3.5cm,rmargin=2.5cm]{geometry}
+\usepackage[unicode=true]{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{
-  pdftitle={Road to Machine Learning},
-  pdfauthor={玩机器学习的张北海},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
-\usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
+            pdftitle={麻麻说我们可以用 R Markdown 写书了},
+            pdfauthor={张三},
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=Blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
 \usepackage{booktabs}
+\usepackage{longtable}
+
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\let\oldhref\href
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+\makeatletter
+\newenvironment{kframe}{%
+\medskip{}
+\setlength{\fboxsep}{.8em}
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\makeatletter
+\@ifundefined{Shaded}{
+}{\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}}
+\@ifpackageloaded{fancyvrb}{%
+  % https://github.com/CTeX-org/ctex-kit/issues/331
+  \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},formatcom=\xeCJKVerbAddon}%
+}{}
+\makeatother
+
+\usepackage{makeidx}
+\makeindex
+
+\urlstyle{tt}
+
 \usepackage{amsthm}
 \makeatletter
 \def\thm@space@setup{%
@@ -80,19 +118,34 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
+
+\frontmatter
+
+\title{麻麻说我们可以用 R Markdown 写书了}
+\author{张三}
+\date{2021-12-30}
 
 \begin{document}
 \maketitle
 
+
+\thispagestyle{empty}
+
+\begin{center}
+献给……
+
+呃，爱谁谁吧
+\end{center}
+
+\setlength{\abovedisplayskip}{-5pt}
+\setlength{\abovedisplayshortskip}{-5pt}
+
 {
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 }
+\listoftables
+\listoffigures
 \hypertarget{ux673aux5668ux5b66ux4e60ux5b66ux4e60ux8defux7ebfux56fe}{%
 \chapter{机器学习学习路线图}\label{ux673aux5668ux5b66ux4e60ux5b66ux4e60ux8defux7ebfux56fe}}
 
@@ -214,7 +267,7 @@
 \hypertarget{ux6570ux636eux6e05ux7406ux548cux683cux5f0fux5316}{%
 \section{数据清理和格式化}\label{ux6570ux636eux6e05ux7406ux548cux683cux5f0fux5316}}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931017\&idx=1\&sn=c2cc1968223edb87a3483a039e36b17c\&chksm=8794e8e3b0e361f58b89bc24d82aaeef4b5e3122b7e8f5409c37f51d4afbce0a4048a01fd7a4\&token=2004915986\&lang=en_US\#rd}{数据预处理\textbar 关于标准化和归一化的一切}\\
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931017\&idx=1\&sn=c2cc1968223edb87a3483a039e36b17c\&chksm=8794e8e3b0e361f58b89bc24d82aaeef4b5e3122b7e8f5409c37f51d4afbce0a4048a01fd7a4\&token=2004915986\&lang=en_US\#rd}{数据预处理\textbar{}关于标准化和归一化的一切}\\
 \#\# 探索性数据分析
 \href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931744\&idx=2\&sn=ec6d3397351c5bebd463ad256a594a2a\&chksm=8794ef8ab0e3669c5c808fad5ff04bdb56911f5adda2c3606e337967ea69d124b893bc850566\&token=2004915986\&lang=en_US\#rd}{推荐收藏 \textbar{} 100个数据分析常用指标和术语}\\
 \href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931565\&idx=1\&sn=9a65a338febe026767363eb2779179e4\&chksm=8794eec7b0e367d17466937dd233cbdeb26d29feb5cddf2e0da37549e832bd3546f22cd9abf1\&token=2004915986\&lang=en_US\#rd}{8个用于数据清洗的Python代码}\\
@@ -316,79 +369,79 @@
 
 \url{https://github.com/tjxj/100-Days-Of-ML-Code}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929809\&idx=1\&sn=6583853472779ddde813391c186e49be\&chksm=8794e43bb0e36d2d97bd2200a74e4ef70072afadb3df646131c3bb2522274b87ee3fc049a444\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day1数据预处理}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929809\&idx=1\&sn=6583853472779ddde813391c186e49be\&chksm=8794e43bb0e36d2d97bd2200a74e4ef70072afadb3df646131c3bb2522274b87ee3fc049a444\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day1数据预处理}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929825\&idx=1\&sn=87d68cf2b67569905662f5cee6de2412\&chksm=8794e40bb0e36d1df52991e60ac433f56135d14799f2d1e638d2159a4f5e54ab7b53a384f080\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day2简单线性回归分析}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929825\&idx=1\&sn=87d68cf2b67569905662f5cee6de2412\&chksm=8794e40bb0e36d1df52991e60ac433f56135d14799f2d1e638d2159a4f5e54ab7b53a384f080\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day2简单线性回归分析}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929849\&idx=1\&sn=d5662bf397f9621f4afbb271e661927a\&chksm=8794e413b0e36d05ea5a9bd40f3a585dcefc0b4c1abddbd562b16c92fabebe237be21548a848\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day3多元线性回归}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929849\&idx=1\&sn=d5662bf397f9621f4afbb271e661927a\&chksm=8794e413b0e36d05ea5a9bd40f3a585dcefc0b4c1abddbd562b16c92fabebe237be21548a848\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day3多元线性回归}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929868\&idx=1\&sn=5807d7ddc97088f0322d005c2a611e74\&chksm=8794e466b0e36d7027d6dcbe3b536228b97b96f74656dfb62f816495e1933473eddab5c5c1a2\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day4-6 逻辑回归}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929868\&idx=1\&sn=5807d7ddc97088f0322d005c2a611e74\&chksm=8794e466b0e36d7027d6dcbe3b536228b97b96f74656dfb62f816495e1933473eddab5c5c1a2\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day4-6 逻辑回归}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929908\&idx=1\&sn=d286fb7b6137cdd38f8da1a442e059f0\&chksm=8794e45eb0e36d4827b8a15bb69e80e4a1fea358fccda510e03e078ad5479324b3cf91807173\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day7 K-NN}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929908\&idx=1\&sn=d286fb7b6137cdd38f8da1a442e059f0\&chksm=8794e45eb0e36d4827b8a15bb69e80e4a1fea358fccda510e03e078ad5479324b3cf91807173\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day7 K-NN}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929948\&idx=2\&sn=1c2f6263a8ac56b1837e730c2141a474\&chksm=8794e4b6b0e36da09a505525b8608736e94f6ea00cd20cee0dc7158291f2338c21411f4bfd39\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day8 逻辑回归的数学原理}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929948\&idx=2\&sn=1c2f6263a8ac56b1837e730c2141a474\&chksm=8794e4b6b0e36da09a505525b8608736e94f6ea00cd20cee0dc7158291f2338c21411f4bfd39\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day8 逻辑回归的数学原理}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929952\&idx=1\&sn=642aab66caac7bbc7dd781ad9e45c325\&chksm=8794e48ab0e36d9c3dc90350d79faf52e50b978a6c0ea99a0b93460f4eae416b4a94ea6de90f\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day9-12 支持向量机}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929952\&idx=1\&sn=642aab66caac7bbc7dd781ad9e45c325\&chksm=8794e48ab0e36d9c3dc90350d79faf52e50b978a6c0ea99a0b93460f4eae416b4a94ea6de90f\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day9-12 支持向量机}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929957\&idx=1\&sn=b1c4268bb60bde35da5debcbfb4c5f7b\&chksm=8794e48fb0e36d99277628ef64c0d1a8e7805cfadd7b389bed2d0eeb202e6366522b4c6e405b\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day11 实现KNN}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929957\&idx=1\&sn=b1c4268bb60bde35da5debcbfb4c5f7b\&chksm=8794e48fb0e36d99277628ef64c0d1a8e7805cfadd7b389bed2d0eeb202e6366522b4c6e405b\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day11 实现KNN}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929966\&idx=1\&sn=83935cbfd51f56cdb08f1b0444dd2e71\&chksm=8794e484b0e36d9226594ac9ba7394d4ac2fd205baef473b4fd6d678fa2cc3e767f32d47ab9b\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day13-14 SVM的实现}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648929966\&idx=1\&sn=83935cbfd51f56cdb08f1b0444dd2e71\&chksm=8794e484b0e36d9226594ac9ba7394d4ac2fd205baef473b4fd6d678fa2cc3e767f32d47ab9b\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day13-14 SVM的实现}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930067\&idx=1\&sn=196f11b78f38b2ebcb2337e126615334\&chksm=8794e539b0e36c2fbd97ee475215eb55acdcad85c8c462f495b008eb30b55ed1422f306f82a3\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day15 朴素贝叶斯}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930067\&idx=1\&sn=196f11b78f38b2ebcb2337e126615334\&chksm=8794e539b0e36c2fbd97ee475215eb55acdcad85c8c462f495b008eb30b55ed1422f306f82a3\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day15 朴素贝叶斯}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930244\&idx=1\&sn=a2a26eba9293c5c2416ccd17d6676ab5\&chksm=8794e5eeb0e36cf8794747a30b8b6cee98db056e9eb62cc075860ed0062b6ef6dc6d5ae81b2e\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day16 通过内核技巧实现SVM}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930244\&idx=1\&sn=a2a26eba9293c5c2416ccd17d6676ab5\&chksm=8794e5eeb0e36cf8794747a30b8b6cee98db056e9eb62cc075860ed0062b6ef6dc6d5ae81b2e\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day16 通过内核技巧实现SVM}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930288\&idx=1\&sn=9a70bd64ee2033de479ca73f6a118529\&chksm=8794e5dab0e36ccc55269d73f810e5dcf8877ee70688e45ecb8fb82b2d48fcd47fe8739a5960\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day17-18 神奇的逻辑回归}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930288\&idx=1\&sn=9a70bd64ee2033de479ca73f6a118529\&chksm=8794e5dab0e36ccc55269d73f810e5dcf8877ee70688e45ecb8fb82b2d48fcd47fe8739a5960\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day17-18 神奇的逻辑回归}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930262\&idx=1\&sn=9d9ba4967c125c3c3fdfa1f852a52663\&chksm=8794e5fcb0e36cea0f26491280047d0c8ee164e72ab163553c9e68d8885112aec97c3d418f28\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day19-20 加州理工学院公开课：机器学习与数据挖掘}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930262\&idx=1\&sn=9d9ba4967c125c3c3fdfa1f852a52663\&chksm=8794e5fcb0e36cea0f26491280047d0c8ee164e72ab163553c9e68d8885112aec97c3d418f28\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day19-20 加州理工学院公开课：机器学习与数据挖掘}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=1\&sn=7d95a463c2296ca470b059fde68d7abc\&chksm=8794ea5bb0e3634dbd3712d3080cfdc9d2eaca7d3798bc8b22d627cfc3cb4ee4891414c10caf\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day21 Beautiful Soup}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=1\&sn=7d95a463c2296ca470b059fde68d7abc\&chksm=8794ea5bb0e3634dbd3712d3080cfdc9d2eaca7d3798bc8b22d627cfc3cb4ee4891414c10caf\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day21 Beautiful Soup}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=2\&sn=e5b05e7af739ae3a2df3ad8531bbea51\&chksm=8794ea5bb0e3634d5d5e909484d5e61a0ce1dc2a6e7453c18c6f2145b70e810f87ec162d2e39\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day22 机器为什么能学习？}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=2\&sn=e5b05e7af739ae3a2df3ad8531bbea51\&chksm=8794ea5bb0e3634d5d5e909484d5e61a0ce1dc2a6e7453c18c6f2145b70e810f87ec162d2e39\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day22 机器为什么能学习？}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=3\&sn=d50d29d04b787aafcb48ca742f650deb\&chksm=8794ea5bb0e3634d9768b3ed39245ff585bfae895c888ec119fd924bc43dd062e09e6c814bd6\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day23-25 决策树及Python实现}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=3\&sn=d50d29d04b787aafcb48ca742f650deb\&chksm=8794ea5bb0e3634d9768b3ed39245ff585bfae895c888ec119fd924bc43dd062e09e6c814bd6\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day23-25 决策树及Python实现}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=4\&sn=0459230c87aef2b3fdc6498971faf205\&chksm=8794ea5bb0e3634d8e6b6c58229d81a5782c52df678ccbb894713603341a58c6b8d65b285b0e\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day26-29 线性代数的本质}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=4\&sn=0459230c87aef2b3fdc6498971faf205\&chksm=8794ea5bb0e3634d8e6b6c58229d81a5782c52df678ccbb894713603341a58c6b8d65b285b0e\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day26-29 线性代数的本质}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=5\&sn=951ffd6b919d03c85a988094cb1edb62\&chksm=8794ea5bb0e3634d404a5953e4098a7d214e8c16d6d4a3c7d0f2e712b51d79c164360d4536d4\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day 30-32 微积分的本质}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930417\&idx=5\&sn=951ffd6b919d03c85a988094cb1edb62\&chksm=8794ea5bb0e3634d404a5953e4098a7d214e8c16d6d4a3c7d0f2e712b51d79c164360d4536d4\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day 30-32 微积分的本质}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930523\&idx=2\&sn=2233b72afa4758265e01f0c0aaafe264\&chksm=8794eaf1b0e363e7c182dd9edf9f50cb143e8baed7de3c6ea8f40c6b2fbe0085fb0ad965c837\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day33-34 随机森林}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648930523\&idx=2\&sn=2233b72afa4758265e01f0c0aaafe264\&chksm=8794eaf1b0e363e7c182dd9edf9f50cb143e8baed7de3c6ea8f40c6b2fbe0085fb0ad965c837\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day33-34 随机森林}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931204\&idx=2\&sn=22ca2eb99fa33aac0ab996cfddaaf667\&chksm=8794e9aeb0e360b8a8c5fa22a5ff4a608fa818165dd4a0fb1a227ba9f078575c1ec05a4c6116\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day35 深度学习之神经网络的结构}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931204\&idx=2\&sn=22ca2eb99fa33aac0ab996cfddaaf667\&chksm=8794e9aeb0e360b8a8c5fa22a5ff4a608fa818165dd4a0fb1a227ba9f078575c1ec05a4c6116\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day35 深度学习之神经网络的结构}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931235\&idx=2\&sn=5258d235f155a93a8fecc0d8558a01e4\&chksm=8794e989b0e3609fdd82921f218e9c4d4a51316c15e5e38b627bc95171fef230e65391448fc9\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day36 深度学习之梯度下降算法}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931235\&idx=2\&sn=5258d235f155a93a8fecc0d8558a01e4\&chksm=8794e989b0e3609fdd82921f218e9c4d4a51316c15e5e38b627bc95171fef230e65391448fc9\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day36 深度学习之梯度下降算法}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931273\&idx=2\&sn=e6d3ba0ab1989daebe6a421b7203368f\&chksm=8794e9e3b0e360f50569c807473b10b1f4320020e454a1e7e7340a1301f86efb898be9d87bd9\&scene=21\&token=123511318\&lang=zh_CN\#wechat_redirect}{100天搞定机器学习\textbar day37 无公式理解反向传播算法之精髓}
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931273\&idx=2\&sn=e6d3ba0ab1989daebe6a421b7203368f\&chksm=8794e9e3b0e360f50569c807473b10b1f4320020e454a1e7e7340a1301f86efb898be9d87bd9\&scene=21\&token=123511318\&lang=zh_CN\#wechat_redirect}{100天搞定机器学习\textbar{}day37 无公式理解反向传播算法之精髓}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931282\&idx=2\&sn=a343a356a7334e3acb692de8a1b66a86\&chksm=8794e9f8b0e360eea16f5024ac82c90f918c4cf71dde65eaea176cc1a51092a2403697474489\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar day38 反向传播算法推导}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931282\&idx=2\&sn=a343a356a7334e3acb692de8a1b66a86\&chksm=8794e9f8b0e360eea16f5024ac82c90f918c4cf71dde65eaea176cc1a51092a2403697474489\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}day38 反向传播算法推导}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931315\&idx=2\&sn=eb893331ce8bfcecf6a98efd4a1e0811\&chksm=8794e9d9b0e360cfe2e2e719369a219921cd017cb27d5ec9d3e79890c97407061ba22cdb48af\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar day39 Tensorflow Keras手写数字识别}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931315\&idx=2\&sn=eb893331ce8bfcecf6a98efd4a1e0811\&chksm=8794e9d9b0e360cfe2e2e719369a219921cd017cb27d5ec9d3e79890c97407061ba22cdb48af\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}day39 Tensorflow Keras手写数字识别}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931315\&idx=2\&sn=eb893331ce8bfcecf6a98efd4a1e0811\&chksm=8794e9d9b0e360cfe2e2e719369a219921cd017cb27d5ec9d3e79890c97407061ba22cdb48af\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar day40-42 Tensorflow Keras识别猫狗}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931315\&idx=2\&sn=eb893331ce8bfcecf6a98efd4a1e0811\&chksm=8794e9d9b0e360cfe2e2e719369a219921cd017cb27d5ec9d3e79890c97407061ba22cdb48af\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}day40-42 Tensorflow Keras识别猫狗}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931329\&idx=2\&sn=c85d0eea79e0a6b631173805bd38f8f2\&chksm=8794ee2bb0e3673d1036fcad96205db675d5a1a360ce5de8b18f36e0f87def0caae010139cd4\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar day43 几张GIF理解K-均值聚类原理}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931329\&idx=2\&sn=c85d0eea79e0a6b631173805bd38f8f2\&chksm=8794ee2bb0e3673d1036fcad96205db675d5a1a360ce5de8b18f36e0f87def0caae010139cd4\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}day43 几张GIF理解K-均值聚类原理}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931441\&idx=3\&sn=609892ad8a7deffb5391beafff0726ae\&chksm=8794ee5bb0e3674d00c6576043baec14932f035b9ce3a526c608f5e8412aba2968dac4376a53\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar day44 k均值聚类数学推导与python实现}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931441\&idx=3\&sn=609892ad8a7deffb5391beafff0726ae\&chksm=8794ee5bb0e3674d00c6576043baec14932f035b9ce3a526c608f5e8412aba2968dac4376a53\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}day44 k均值聚类数学推导与python实现}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931441\&idx=4\&sn=19b0d91ba8ca7e09eb41ed3306536397\&chksm=8794ee5bb0e3674dd5282175be71a7a3e22f9da0515908fd34a1eb22a1474a29bb12119c2e04\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar day45-53 《Python数据科学手册》}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931441\&idx=4\&sn=19b0d91ba8ca7e09eb41ed3306536397\&chksm=8794ee5bb0e3674dd5282175be71a7a3e22f9da0515908fd34a1eb22a1474a29bb12119c2e04\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}day45-53 《Python数据科学手册》}
 
-\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931520\&idx=2\&sn=968cf54955bd0c56e696618af78a95f4\&chksm=8794eeeab0e367fc7539eb55c0183ad5f46420e0d857dccfe6daa205e247b98af6741ad1f5d2\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar day54 聚类系列：层次聚类原理及案例}
+\href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648931520\&idx=2\&sn=968cf54955bd0c56e696618af78a95f4\&chksm=8794eeeab0e367fc7539eb55c0183ad5f46420e0d857dccfe6daa205e247b98af6741ad1f5d2\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}day54 聚类系列：层次聚类原理及案例}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648932274\&idx=2\&sn=5ada70291cab3119e59b26d294f80a25\&chksm=8794ed98b0e3648eed6feea95ae55f00fb03110f4b77e29934554f38a0052caafb78ee877365\&token=1991487213\&lang=zh_CN\#rd}{100天搞定机器学习\textbar Day55 最大熵模型}
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648932274\&idx=2\&sn=5ada70291cab3119e59b26d294f80a25\&chksm=8794ed98b0e3648eed6feea95ae55f00fb03110f4b77e29934554f38a0052caafb78ee877365\&token=1991487213\&lang=zh_CN\#rd}{100天搞定机器学习\textbar{}Day55 最大熵模型}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648932334\&idx=2\&sn=4a99ae273f3f7d1928a6986658ec2fe8\&chksm=8794edc4b0e364d21a187a4ce487c2cf5587c648e143d3ec08105943f6e5c49be06b16f075d9\&token=1822684797\&lang=zh_CN\#rd}{100天搞定机器学习\textbar Day56 随机森林工作原理及调参实战（信用卡欺诈预测）}
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648932334\&idx=2\&sn=4a99ae273f3f7d1928a6986658ec2fe8\&chksm=8794edc4b0e364d21a187a4ce487c2cf5587c648e143d3ec08105943f6e5c49be06b16f075d9\&token=1822684797\&lang=zh_CN\#rd}{100天搞定机器学习\textbar{}Day56 随机森林工作原理及调参实战（信用卡欺诈预测）}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648932515\&idx=1\&sn=2ac90e1b53169c19140aca36bede4d70\&chksm=87941289b0e39b9f493f2e7b5e84ce0d943c3f3185949c0965f61f13991a63373ecc2d772184\&token=1141224323\&lang=zh_CN\#rd}{100天搞定机器学习\textbar Day57 Adaboost知识手册(理论篇)}
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648932515\&idx=1\&sn=2ac90e1b53169c19140aca36bede4d70\&chksm=87941289b0e39b9f493f2e7b5e84ce0d943c3f3185949c0965f61f13991a63373ecc2d772184\&token=1141224323\&lang=zh_CN\#rd}{100天搞定机器学习\textbar{}Day57 Adaboost知识手册(理论篇)}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648935326\&idx=1\&sn=beccf9c3000cf8e5557fb962c6b29160\&chksm=879419b4b0e390a2c6286e07b8c922f78d3265dc70aebfe827b977cd98d03bc159043b49ddad\&token=1141224323\&lang=zh_CN\#rd}{100天搞定机器学习\textbar Day58 多分类机器学习中数据不平衡的处理（NSL-KDD 数据集+LightGBM)}
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648935326\&idx=1\&sn=beccf9c3000cf8e5557fb962c6b29160\&chksm=879419b4b0e390a2c6286e07b8c922f78d3265dc70aebfe827b977cd98d03bc159043b49ddad\&token=1141224323\&lang=zh_CN\#rd}{100天搞定机器学习\textbar{}Day58 多分类机器学习中数据不平衡的处理（NSL-KDD 数据集+LightGBM)}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648937158\&idx=2\&sn=87232a58735a3fc900daf96b7189b49d\&chksm=879400ecb0e389fac1922db02b425c708b568ce4e1493ed6df2297c92723af7e5767e20b5026\&token=1141224323\&lang=zh_CN\#rd}{100天搞定机器学习\textbar Day59 硬核拆解GBDT}
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648937158\&idx=2\&sn=87232a58735a3fc900daf96b7189b49d\&chksm=879400ecb0e389fac1922db02b425c708b568ce4e1493ed6df2297c92723af7e5767e20b5026\&token=1141224323\&lang=zh_CN\#rd}{100天搞定机器学习\textbar{}Day59 硬核拆解GBDT}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648948540\&idx=1\&sn=9b7101248effcf5e00aee7a28edb4383\&chksm=87942d16b0e3a400567fc26f81d78c04a74a4ab4c45f06cab5dfd19ac6cb385c874c374b73ad\&token=211056560\&lang=zh_CN\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day60 遇事不决，XGBoost}
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648948540\&idx=1\&sn=9b7101248effcf5e00aee7a28edb4383\&chksm=87942d16b0e3a400567fc26f81d78c04a74a4ab4c45f06cab5dfd19ac6cb385c874c374b73ad\&token=211056560\&lang=zh_CN\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day60 遇事不决，XGBoost}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648949016\&idx=2\&sn=e07df5503772e08f96a41845a36c8575\&chksm=87945332b0e3da24b507f4b39f1889dae196a699a0b8e92f8fd50d498876f66e0b4803273804\&token=211056560\&lang=zh_CN\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar Day61 手算+可视化，彻底理解XGBoost}
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648949016\&idx=2\&sn=e07df5503772e08f96a41845a36c8575\&chksm=87945332b0e3da24b507f4b39f1889dae196a699a0b8e92f8fd50d498876f66e0b4803273804\&token=211056560\&lang=zh_CN\&scene=21\#wechat_redirect}{100天搞定机器学习\textbar{}Day61 手算+可视化，彻底理解XGBoost}
 
-\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648934632\&idx=3\&sn=22fb617d5885be57889250d839221f27\&chksm=87941ac2b0e393d451917c328f3204737856a28263f8fe7258dc7b8eff7a38a9f94e580fff9c\&scene=21\&cur_album_id=1340752070114328576\#wechat_redirect}{100天搞定机器学习\textbar Day62 随机森林调参实战}
+\href{https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=2648934632\&idx=3\&sn=22fb617d5885be57889250d839221f27\&chksm=87941ac2b0e393d451917c328f3204737856a28263f8fe7258dc7b8eff7a38a9f94e580fff9c\&scene=21\&cur_album_id=1340752070114328576\#wechat_redirect}{100天搞定机器学习\textbar{}Day62 随机森林调参实战}
 
 番外：
 
@@ -599,7 +652,7 @@ BOOKDOWN官网（\url{https://bookdown.org/）上有不少人发布了自己的�
 (\url{https://t.1yb.co/2g6v}) {[}南京大学的Python数据分析课件{]}
 (\url{https://t.1yb.co/Bfly})【2020】清华大学《高级机器学习课件和专家特邀报告(附pdf下载){]}
 \href{http://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==\&mid=501452490\&idx=1\&sn=53548f92a09198ad00fb6bfc92f45bdb\&chksm=07941ce030e395f608815914ab4bdad4702e617d8fcde7ffcd568bd6bb4b743c1862b76bcb66\#rd}{深度学习四大名著}
-\href{https://t.1yb.co/Bflc}{免费下载\textasciitilde Python办公自动化全套代码}
+\href{https://t.1yb.co/Bflc}{免费下载\textasciitilde{}Python办公自动化全套代码}
 \href{https://t.1yb.co/9k6W}{靠这2本算法书，我进入了梦寐以求的大厂！}
 \href{https://t.1yb.co/9Htp}{【高清大图下载】机器学习从入门到精通思维导图}
 \href{https://t.1yb.co/ejr6}{机器学习圣经PRML中文版}
@@ -642,6 +695,9 @@ BOOKDOWN官网（\url{https://bookdown.org/）上有不少人发布了自己的�
 \hypertarget{ux7ed9ux4f5cux8005ux70b9ux676fux5496ux5561}{%
 \section{给作者点杯咖啡}\label{ux7ed9ux4f5cux8005ux70b9ux676fux5496ux5561}}
 
-  \bibliography{book.bib,packages.bib}
+\bibliography{book.bib,packages.bib}
+
+\backmatter
+\printindex
 
 \end{document}
