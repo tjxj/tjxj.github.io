@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Python基础 | Road to Machine Learning</title>
+<meta name="author" content="玩机器学习的张北海">
+<meta name="description" content="2.1 Python 240个免费Python教程python基础1| 索引与切片编程大神的骚操作：Python技巧小贴士分享30段Python代码，拿起来就能在工作中用！17个Python骚操作，你都Ok吗？CuteCharts一个敲可爱的 Python 手绘风格可视化图表库震惊了！每30秒学会一个Python小技巧提速30倍！这个加速包让Python代码飞起来  2.2 Numpy...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Python基础 | Road to Machine Learning">
+<meta property="og:type" content="book">
+<meta property="og:description" content="2.1 Python 240个免费Python教程python基础1| 索引与切片编程大神的骚操作：Python技巧小贴士分享30段Python代码，拿起来就能在工作中用！17个Python骚操作，你都Ok吗？CuteCharts一个敲可爱的 Python 手绘风格可视化图表库震惊了！每30秒学会一个Python小技巧提速30倍！这个加速包让Python代码飞起来  2.2 Numpy...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Python基础 | Road to Machine Learning">
+<meta name="twitter:description" content="2.1 Python 240个免费Python教程python基础1| 索引与切片编程大神的骚操作：Python技巧小贴士分享30段Python代码，拿起来就能在工作中用！17个Python骚操作，你都Ok吗？CuteCharts一个敲可爱的 Python 手绘风格可视化图表库震惊了！每30秒学会一个Python小技巧提速30倍！这个加速包让Python代码飞起来  2.2 Numpy...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Road to Machine Learning</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> 机器学习学习路线图</a></li>
+<li><a class="active" href="python%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">2</span> Python基础</a></li>
+<li><a class="" href="%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">3</span> 数学基础</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">4</span> 机器学习基础</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">5</span> 机器学习模型</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98.html"><span class="header-section-number">6</span> 机器学习项目实战</a></li>
+<li><a class="" href="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">7</span> 深度学习基础</a></li>
+<li><a class="" href="%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E7%AF%87.html"><span class="header-section-number">8</span> 工具和框架篇</a></li>
+<li><a class="" href="%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90.html"><span class="header-section-number">9</span> 开源项目推荐</a></li>
+<li><a class="" href="%E5%85%8D%E8%B4%B9%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD.html"><span class="header-section-number">10</span> 免费资料下载</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BF%85%E8%AF%BB%E8%AE%BA%E6%96%87.html"><span class="header-section-number">11</span> 机器学习、深度学习必读论文</a></li>
+<li><a class="" href="%E8%81%94%E7%B3%BB%E4%BD%9C%E8%80%85.html"><span class="header-section-number">12</span> 联系作者</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="python基础" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Python基础<a class="anchor" aria-label="anchor" href="#python%E5%9F%BA%E7%A1%80"><i class="fas fa-link"></i></a>
+</h1>
+<div id="python" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Python<a class="anchor" aria-label="anchor" href="#python"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931750&amp;idx=2&amp;sn=310e6abdd9ac4ae2c4fce3e7135823cd&amp;chksm=8794ef8cb0e3669a94ce336a1de465fa25ddbf28817412015e261e1bc7e1d020cd69d19711bf&amp;token=2004915986&amp;lang=en_US#rd">240个免费Python教程</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929800&amp;idx=1&amp;sn=cf1f70ad98085fe3447e41680f1d8f49&amp;chksm=8794e422b0e36d34c503057d7bc85c26740dafd47ee489d623342df8720394a63d64d68016bf&amp;token=2004915986&amp;lang=en_US#rd">python基础1| 索引与切片</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931942&amp;idx=2&amp;sn=79ba46178974cb9fddfacce80eb4f8ae&amp;chksm=8794ec4cb0e3655aa233943bbf6e7fbd0be6f52b83eb334527356a796e488b6d7b867f2cb380&amp;token=2004915986&amp;lang=en_US#rd">编程大神的骚操作：Python技巧小贴士</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931756&amp;idx=1&amp;sn=de1e55c89615ded0572fe860375db2ce&amp;chksm=8794ef86b0e36690b0179f035d68cf82d6bad2487183ded3f6971e37f7ba3a1342213902ecd5&amp;token=2004915986&amp;lang=en_US#rd">分享30段Python代码，拿起来就能在工作中用！</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931761&amp;idx=1&amp;sn=acdfe05c9b355e758509b38f1a0976ea&amp;chksm=8794ef9bb0e3668dfa02b837cf4aac4eaaef84b76a8e93a4342bd0c5360f00c021bef31163cb&amp;token=2004915986&amp;lang=en_US#rd">17个Python骚操作，你都Ok吗？</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931821&amp;idx=1&amp;sn=2969c8ceff5a98640647f6260f039588&amp;chksm=8794efc7b0e366d1a8d18847ea0d025ffb60477f6476bb0833959cdd6e2966e30278c3bdc3bd&amp;token=2004915986&amp;lang=en_US#rd">CuteCharts一个敲可爱的 Python 手绘风格可视化图表库</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931723&amp;idx=1&amp;sn=d2adb74f3e3a852d2525846c8db0bb1a&amp;chksm=8794efa1b0e366b7ed6705512ef753379b1997e019bd7d5efed943bee5ceb11f3d610613c0dc&amp;token=2004915986&amp;lang=en_US#rd">震惊了！每30秒学会一个Python小技巧</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931287&amp;idx=1&amp;sn=7cf7b5c69e4992b5ff269aa81e37e40a&amp;chksm=8794e9fdb0e360eb838ef8c6b7e2b1d1381dc8648aca6e94c4eb2e7c044b42301e95a4398851&amp;token=2004915986&amp;lang=en_US#rd">提速30倍！这个加速包让Python代码飞起来</a></p>
+</div>
+<div id="numpy" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Numpy<a class="anchor" aria-label="anchor" href="#numpy"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931298&amp;idx=2&amp;sn=b8bc3fc9b11b9a074c676cf3c5217e84&amp;chksm=8794e9c8b0e360dec4a960a90871048b4a33fa827e5279967bbabab747b601c74509d2e3af4e&amp;token=2004915986&amp;lang=en_US#rd">安利！这是我见过最好的NumPy图解教程</a><br>
+## Pandas
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931204&amp;idx=1&amp;sn=b3c1beeb765a2388e4df502d86393e6e&amp;chksm=8794e9aeb0e360b81543f36d3d94b84ca3d28b9d2ccdb0cfdaf9ad6e928cc5599303ca872488&amp;token=2004915986&amp;lang=en_US#rd">十套练习，教你如何使用Pandas做数据分析</a><br>
+## Scipy</p>
+</div>
+<div id="matplotlib" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Matplotlib<a class="anchor" aria-label="anchor" href="#matplotlib"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="工具和环境" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> 工具和环境<a class="anchor" aria-label="anchor" href="#%E5%B7%A5%E5%85%B7%E5%92%8C%E7%8E%AF%E5%A2%83"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"><span class="header-section-number">1</span> 机器学习学习路线图</a></div>
+<div class="next"><a href="%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">3</span> 数学基础</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#python%E5%9F%BA%E7%A1%80"><span class="header-section-number">2</span> Python基础</a></li>
+<li><a class="nav-link" href="#python"><span class="header-section-number">2.1</span> Python</a></li>
+<li><a class="nav-link" href="#numpy"><span class="header-section-number">2.2</span> Numpy</a></li>
+<li><a class="nav-link" href="#matplotlib"><span class="header-section-number">2.3</span> Matplotlib</a></li>
+<li><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E5%92%8C%E7%8E%AF%E5%A2%83"><span class="header-section-number">2.4</span> 工具和环境</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Road to Machine Learning</strong>" was written by 玩机器学习的张北海. It was last built on 2021-12-30.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

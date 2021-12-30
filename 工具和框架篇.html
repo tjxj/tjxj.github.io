@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 8 工具和框架篇 | Road to Machine Learning</title>
+<meta name="author" content="玩机器学习的张北海">
+<meta name="description" content="有了这款自动补全代码神器，撸码速度提升N倍！  8.1 TensorFlow VS PyTorch TensorFlow还是PyTorch？我建议你听我的PyTorch称霸学界，TensorFlow固守业界，ML框架之争将走向何方？  8.1.1 安装问题 手把手教你如何在阿里云ECS搭建Python TensorFlow JupyterPyTorch在Windows下的安装   8.2...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 8 工具和框架篇 | Road to Machine Learning">
+<meta property="og:type" content="book">
+<meta property="og:description" content="有了这款自动补全代码神器，撸码速度提升N倍！  8.1 TensorFlow VS PyTorch TensorFlow还是PyTorch？我建议你听我的PyTorch称霸学界，TensorFlow固守业界，ML框架之争将走向何方？  8.1.1 安装问题 手把手教你如何在阿里云ECS搭建Python TensorFlow JupyterPyTorch在Windows下的安装   8.2...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 8 工具和框架篇 | Road to Machine Learning">
+<meta name="twitter:description" content="有了这款自动补全代码神器，撸码速度提升N倍！  8.1 TensorFlow VS PyTorch TensorFlow还是PyTorch？我建议你听我的PyTorch称霸学界，TensorFlow固守业界，ML框架之争将走向何方？  8.1.1 安装问题 手把手教你如何在阿里云ECS搭建Python TensorFlow JupyterPyTorch在Windows下的安装   8.2...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Road to Machine Learning</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> 机器学习学习路线图</a></li>
+<li><a class="" href="python%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">2</span> Python基础</a></li>
+<li><a class="" href="%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">3</span> 数学基础</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">4</span> 机器学习基础</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">5</span> 机器学习模型</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98.html"><span class="header-section-number">6</span> 机器学习项目实战</a></li>
+<li><a class="" href="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">7</span> 深度学习基础</a></li>
+<li><a class="active" href="%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E7%AF%87.html"><span class="header-section-number">8</span> 工具和框架篇</a></li>
+<li><a class="" href="%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90.html"><span class="header-section-number">9</span> 开源项目推荐</a></li>
+<li><a class="" href="%E5%85%8D%E8%B4%B9%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD.html"><span class="header-section-number">10</span> 免费资料下载</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BF%85%E8%AF%BB%E8%AE%BA%E6%96%87.html"><span class="header-section-number">11</span> 机器学习、深度学习必读论文</a></li>
+<li><a class="" href="%E8%81%94%E7%B3%BB%E4%BD%9C%E8%80%85.html"><span class="header-section-number">12</span> 联系作者</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="工具和框架篇" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8</span> 工具和框架篇<a class="anchor" aria-label="anchor" href="#%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E7%AF%87"><i class="fas fa-link"></i></a>
+</h1>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931621&amp;idx=1&amp;sn=ff25bd9d9d6794677841f87cfa3f96c2&amp;chksm=8794ef0fb0e3661997114fd975dcbc5ef1538d0d65583c5e77db7b9a5d55e6a7a21dbaffd433&amp;token=2004915986&amp;lang=en_US#rd">有了这款自动补全代码神器，撸码速度提升N倍！</a></p>
+<div id="tensorflow-vs-pytorch" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> TensorFlow VS PyTorch<a class="anchor" aria-label="anchor" href="#tensorflow-vs-pytorch"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931635&amp;idx=1&amp;sn=a7fd9500f40768559163f20fe03e9700&amp;chksm=8794ef19b0e3660fc379aef1387fe0f04ee54d5bfb2e1384efcdd456c38dc55c9affb4d35350&amp;token=2004915986&amp;lang=en_US#rd">TensorFlow还是PyTorch？我建议你听我的</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931837&amp;idx=2&amp;sn=4f7eeac6e3bdcecdf95d14fc7d41ca26&amp;chksm=8794efd7b0e366c1368dc67cc0f2c3dbacfdcb504ab050398d66328cb062832eef1aec9894c4&amp;token=2004915986&amp;lang=en_US#rd">PyTorch称霸学界，TensorFlow固守业界，ML框架之争将走向何方？</a></p>
+<div id="安装问题" class="section level3" number="8.1.1">
+<h3>
+<span class="header-section-number">8.1.1</span> 安装问题<a class="anchor" aria-label="anchor" href="#%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98"><i class="fas fa-link"></i></a>
+</h3>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931932&amp;idx=3&amp;sn=9654d036e8f02a2cb471a1793786b829&amp;chksm=8794ec76b0e365604dacfdad895721104142e7ee532c4905992c974462e84ac0446d501ecdf6&amp;token=2004915986&amp;lang=en_US#rd">手把手教你如何在阿里云ECS搭建Python TensorFlow Jupyter</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931156&amp;idx=3&amp;sn=2eaff48b1c3e08fc8c2498597ec74fda&amp;chksm=8794e97eb0e36068d1446e7ea6207080c7fede6dc43f5f960188f5d4e0faf10a6e5030916630&amp;token=2004915986&amp;lang=en_US#rd">PyTorch在Windows下的安装</a></p>
+</div>
+</div>
+<div id="sklearn" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> sklearn<a class="anchor" aria-label="anchor" href="#sklearn"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929856&amp;idx=1&amp;sn=0a6ce240f46bea7d74f2a850625de832&amp;chksm=8794e46ab0e36d7c449579513e69fbbc957ac61eac10c6f863ed4a860debd3dca1ed0ba442c2&amp;token=2004915986&amp;lang=en_US#rd">极简Scikit-Learn入门</a></p>
+</div>
+<div id="tensorflow" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> Tensorflow<a class="anchor" aria-label="anchor" href="#tensorflow"><i class="fas fa-link"></i></a>
+</h2>
+<p>本项目是TensorFlow2.0学习笔记，主要参考官方文档，此外也添加个人许多个人使用心得体会等内容，本项目所有笔记也发布在博客园等平台，希望对你有所帮助。</p>
+<p>TensorFlow2.0正式版在10月初已经发布，相比于1.X，2.0版的TensorFlow修改的不是一点半点，这些修改极大的弥补了1.X版本的反人类设计，提升了框架的整体易用性，绝对好评！
+<a href="">TensorFlow2.0（一）：基本数据结构——张量</a>
+<a href="">TensorFlow2.0（二）：数学运算</a>
+<a href="">TensorFlow2.0（三）：张量排序、最大最小值</a>
+<a href="">TensorFlow2.0（四）：填充与复制</a>
+<a href="">TensorFlow2.0（五）：张量限幅</a>
+<a href="">TensorFlow2.0（六）：数据预处理中的Dataset</a>
+<a href="">TensorFlow2.0（七）：激活函数</a>
+<a href="">TensorFlow2.0（八）：误差计算——损失函数总结</a>
+<a href="">TensorFlow2.0（9）：TensorBoard可视化</a>
+<a href="">TensorFlow2.0（10）：加载自定义图片数据集到Dataset</a>
+<a href="">TensorFlow2.0（11）：tf.keras建模三部曲</a></p>
+</div>
+<div id="pytorch" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> Pytorch<a class="anchor" aria-label="anchor" href="#pytorch"><i class="fas fa-link"></i></a>
+</h2>
+<div id="pytorch教程" class="section level3" number="8.4.1">
+<h3>
+<span class="header-section-number">8.4.1</span> Pytorch教程<a class="anchor" aria-label="anchor" href="#pytorch%E6%95%99%E7%A8%8B"><i class="fas fa-link"></i></a>
+</h3>
+<p>这次是由 Stéphane d’Ascoli, Andrei Bursuc和Timothée Lacroix一起带来的“利用 PyTorch 进行深度学习的实践之旅”课程。
+这个教程的优点有这么几个：</p>
+<p>PPT讲解和实践教程穿插，好懂；</p>
+<p>实践教程都是Github项目，数据、代码一应俱全；</p>
+<p>教程特别详细，代码基础差也可以上手。</p>
+<p>课程网址:
+<a href="http://www.dataflowr.com" class="uri">http://www.dataflowr.com</a></p>
+<p>GitHub链接:
+<a href="https://github.com/mlelarge/dataflowr" class="uri">https://github.com/mlelarge/dataflowr</a></p>
+</div>
+<div id="算法实现" class="section level3" number="8.4.2">
+<h3>
+<span class="header-section-number">8.4.2</span> 算法实现<a class="anchor" aria-label="anchor" href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><i class="fas fa-link"></i></a>
+</h3>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931942&amp;idx=3&amp;sn=b979ab56ef8e1e2ea8e49c9cb8de7913&amp;chksm=8794ec4cb0e3655a200c3448c963dd260c7988107d6f5774c88a56c849cda6a6a9026a4175e1&amp;token=2004915986&amp;lang=en_US#rd">17种深度强化学习算法用Pytorch实现（附链接）</a><br>
+## 其他
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931701&amp;idx=1&amp;sn=bf2944fa14089af54caec758f5ac8f17&amp;chksm=8794ef5fb0e3664969832fffd82b93fc376bdd3522d5d4e34804fc2a68681cf27ad744342b97&amp;token=2004915986&amp;lang=en_US#rd">Excel表格中最经典的36个小技巧，全在这儿了</a>
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931690&amp;idx=2&amp;sn=d35c9677922e69fbcd5b1cf08ad78b7e&amp;chksm=8794ef40b0e3665611d9db96a8172a52cfd7f7ea58a05ed39695e50661b598f62b58dfc70643&amp;token=2004915986&amp;lang=en_US#rd">一千行MySQL命令</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931104&amp;idx=1&amp;sn=8ac60bf2e3ffb587aed18bd158195c80&amp;chksm=8794e90ab0e3601c2a1fb5137853d5fe8ac51785ae9be3edd9e85af6339ce52df23f402fee06&amp;token=2004915986&amp;lang=en_US#rd">用手机玩转BP神经网络</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931342&amp;idx=1&amp;sn=59d99712fce56f91ad830b8be1192fcf&amp;chksm=8794ee24b0e36732fbe91324accf19771f2cd26621a968661c99ad5929b1e1e2cefbe72a9e40&amp;token=2004915986&amp;lang=en_US#rd">这个神级编辑器给 Excel 加上了 Python 功能！</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931676&amp;idx=1&amp;sn=2aa0b0d6f99a53a003f066875d20c224&amp;chksm=8794ef76b0e36660aea3427d5212cbf4a78d5e6e1165cf2d5cd78f1e630069695e057c1cde94&amp;token=2004915986&amp;lang=en_US#rd">强烈安利这款功能强悍的机器学习可视化工具</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931837&amp;idx=1&amp;sn=dc8a6f1c3babd67723ca9edc8fe5bba5&amp;chksm=8794efd7b0e366c1b83441d2f27164f38fdffe1f23109a9a6a284bd8a5f55d0b59adfb4cb588&amp;token=2004915986&amp;lang=en_US#rd">Python新工具：用三行代码提取PDF表格数据</a><br>
+## IDE
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931156&amp;idx=2&amp;sn=8e18c374c426c7e08d4c2a8810ea3de9&amp;chksm=8794e97eb0e36068ca3c6358f64b2611e5165bdb065990417db09df1268affa27b56ca3d8eff&amp;token=2004915986&amp;lang=en_US#rd">效率提升利器！Jupyter Notebook快捷键汇总</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931122&amp;idx=2&amp;sn=ae84284c2eac83f8b3c00f3a895e000b&amp;chksm=8794e918b0e3600ea4b560a545f258241a1232fa005430722583e3d9a96f4c248843486a354c&amp;token=2004915986&amp;lang=en_US#rd">Anaconda的使用-Spyder快捷键大全</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931329&amp;idx=3&amp;sn=592bcf9be7a3bf8aa95bbc8169be0e43&amp;chksm=8794ee2bb0e3673d15867b6908616793c05b35194360596660d169a4b601eb40d7a04116445c&amp;token=2004915986&amp;lang=en_US#rd">JupyterLab：数据分析程序员的必备笔记神器</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931929&amp;idx=2&amp;sn=8a8504bd66fccc6dbd3baf622a0117a8&amp;chksm=8794ec73b0e3656546280518d5f0c2d7d278b9d2817fad4ebe5a50feb30b9315e012ba475f8a&amp;token=2004915986&amp;lang=en_US#rd">哪种Python IDE最适合你？这里有一份优缺点列表</a></p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">7</span> 深度学习基础</a></div>
+<div class="next"><a href="%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90.html"><span class="header-section-number">9</span> 开源项目推荐</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E7%AF%87"><span class="header-section-number">8</span> 工具和框架篇</a></li>
+<li>
+<a class="nav-link" href="#tensorflow-vs-pytorch"><span class="header-section-number">8.1</span> TensorFlow VS PyTorch</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98"><span class="header-section-number">8.1.1</span> 安装问题</a></li></ul>
+</li>
+<li><a class="nav-link" href="#sklearn"><span class="header-section-number">8.2</span> sklearn</a></li>
+<li><a class="nav-link" href="#tensorflow"><span class="header-section-number">8.3</span> Tensorflow</a></li>
+<li>
+<a class="nav-link" href="#pytorch"><span class="header-section-number">8.4</span> Pytorch</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pytorch%E6%95%99%E7%A8%8B"><span class="header-section-number">8.4.1</span> Pytorch教程</a></li>
+<li><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="header-section-number">8.4.2</span> 算法实现</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Road to Machine Learning</strong>" was written by 玩机器学习的张北海. It was last built on 2021-12-30.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

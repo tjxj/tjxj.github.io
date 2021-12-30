@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 深度学习基础 | Road to Machine Learning</title>
+<meta name="author" content="玩机器学习的张北海">
+<meta name="description" content="【深度学习】正则化入门【算法系列】深度学习中的正则化一文读懂深度学习：从神经元到BERT吴恩达深度学习课程笔记（手绘插画）机器学习、深度学习思维导图专访Keras之父：关于深度学习、Keras的诞生和给初学者的建议深度学习与传统 CS 的教学和课程有什么区别？万字长文！机器学习与深度学习核心知识点总结深度学习初探：使用Keras创建一个聊天机器人  7.1 资源推荐...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 7 深度学习基础 | Road to Machine Learning">
+<meta property="og:type" content="book">
+<meta property="og:description" content="【深度学习】正则化入门【算法系列】深度学习中的正则化一文读懂深度学习：从神经元到BERT吴恩达深度学习课程笔记（手绘插画）机器学习、深度学习思维导图专访Keras之父：关于深度学习、Keras的诞生和给初学者的建议深度学习与传统 CS 的教学和课程有什么区别？万字长文！机器学习与深度学习核心知识点总结深度学习初探：使用Keras创建一个聊天机器人  7.1 资源推荐...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 深度学习基础 | Road to Machine Learning">
+<meta name="twitter:description" content="【深度学习】正则化入门【算法系列】深度学习中的正则化一文读懂深度学习：从神经元到BERT吴恩达深度学习课程笔记（手绘插画）机器学习、深度学习思维导图专访Keras之父：关于深度学习、Keras的诞生和给初学者的建议深度学习与传统 CS 的教学和课程有什么区别？万字长文！机器学习与深度学习核心知识点总结深度学习初探：使用Keras创建一个聊天机器人  7.1 资源推荐...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Road to Machine Learning</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> 机器学习学习路线图</a></li>
+<li><a class="" href="python%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">2</span> Python基础</a></li>
+<li><a class="" href="%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">3</span> 数学基础</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">4</span> 机器学习基础</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">5</span> 机器学习模型</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98.html"><span class="header-section-number">6</span> 机器学习项目实战</a></li>
+<li><a class="active" href="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.html"><span class="header-section-number">7</span> 深度学习基础</a></li>
+<li><a class="" href="%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E7%AF%87.html"><span class="header-section-number">8</span> 工具和框架篇</a></li>
+<li><a class="" href="%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90.html"><span class="header-section-number">9</span> 开源项目推荐</a></li>
+<li><a class="" href="%E5%85%8D%E8%B4%B9%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD.html"><span class="header-section-number">10</span> 免费资料下载</a></li>
+<li><a class="" href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BF%85%E8%AF%BB%E8%AE%BA%E6%96%87.html"><span class="header-section-number">11</span> 机器学习、深度学习必读论文</a></li>
+<li><a class="" href="%E8%81%94%E7%B3%BB%E4%BD%9C%E8%80%85.html"><span class="header-section-number">12</span> 联系作者</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="深度学习基础" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> 深度学习基础<a class="anchor" aria-label="anchor" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80"><i class="fas fa-link"></i></a>
+</h1>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929625&amp;idx=1&amp;sn=db66b18d78c88f128ed49794c13f7b3d&amp;chksm=8794e773b0e36e65306e09f228fc2023a789e3f474da156afc90f656d3219b383cbf2925c83c&amp;token=2004915986&amp;lang=en_US#rd">【深度学习】正则化入门</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929626&amp;idx=1&amp;sn=d3f4b3188cfef6c1f29b046ef3800789&amp;chksm=8794e770b0e36e665761cea2e9b73ad2a1119d1a9a6ea757980ea4a17cda5ae4dce633b1f5e9&amp;token=2004915986&amp;lang=en_US#rd">【算法系列】深度学习中的正则化</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930465&amp;idx=1&amp;sn=a0d0568f5cfe6537d4b930ab3daea544&amp;chksm=8794ea8bb0e3639d94e704322012055a7738a995bbe19904bdd1cca950f1265b31768d734fb0&amp;token=2004915986&amp;lang=en_US#rd">一文读懂深度学习：从神经元到BERT</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930199&amp;idx=2&amp;sn=8e751a658d26bbe37da19dcfacf1f54c&amp;chksm=8794e5bdb0e36caba536a31210c3527507b319a450a5dced1f858a49335856d0c18b8972eae2&amp;token=2004915986&amp;lang=en_US#rd">吴恩达深度学习课程笔记（手绘插画）</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930199&amp;idx=1&amp;sn=09322d95760b94555e914763cb8f64ec&amp;chksm=8794e5bdb0e36cab65de17aa9f3af1aaffe908f81674f3525dd15b02ec3cd915c4624694941e&amp;token=2004915986&amp;lang=en_US#rd">机器学习、深度学习思维导图</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930261&amp;idx=2&amp;sn=1edace919030ce4f8f61855089af76f2&amp;chksm=8794e5ffb0e36ce9cc9ef3f160fb92f3578ec806896b376d44363048e4df8e053c163cf95c08&amp;token=2004915986&amp;lang=en_US#rd">专访Keras之父：关于深度学习、Keras的诞生和给初学者的建议</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930175&amp;idx=2&amp;sn=5032dfcf9809fef48dd9067a59ddb88c&amp;chksm=8794e555b0e36c43cf6720c0127d7c2c60dce81f5134da7bcf98af6db6d499511ffcaf8c5d0a&amp;token=2004915986&amp;lang=en_US#rd">深度学习与传统 CS 的教学和课程有什么区别？</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931852&amp;idx=1&amp;sn=1827d606b1780bc3c0987b6cfb65f494&amp;chksm=8794ec26b0e3653083452e2f06f9ad643bdf17765467945fe35cabf3839087d37273bb4d84f0&amp;token=2004915986&amp;lang=en_US#rd">万字长文！机器学习与深度学习核心知识点总结</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931557&amp;idx=1&amp;sn=a95fd24213f9a23e5fdfe2d8cabc1e73&amp;chksm=8794eecfb0e367d92eb76b707f82f7f1d9fc2a8c843181f8a120ee583c5d0cde55d875aa5a85&amp;token=2004915986&amp;lang=en_US#rd">深度学习初探：使用Keras创建一个聊天机器人</a></p>
+<div id="资源推荐-1" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> 资源推荐<a class="anchor" aria-label="anchor" href="#%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>由川大一名优秀毕业生创建。这是一个整合 AI 相关知识的项目，通过广大网友的集思广益, 形成内容充实，覆盖全面的 AI 相关知识文集。
+目前，该项目的 star 数已经超过 24000，有 6700 多次 Fork，项目地址：</p>
+<p><a href="https://github.com/scutan90/DeepLearning-500-questions" class="uri">https://github.com/scutan90/DeepLearning-500-questions</a>）</p>
+<p>目前，全书有近 30 万字，初步分为 18 个章节。这 18 个章节涉及到深度学习的各个方面：</p>
+<p>深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98.html"><span class="header-section-number">6</span> 机器学习项目实战</a></div>
+<div class="next"><a href="%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E7%AF%87.html"><span class="header-section-number">8</span> 工具和框架篇</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80"><span class="header-section-number">7</span> 深度学习基础</a></li>
+<li><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90-1"><span class="header-section-number">7.1</span> 资源推荐</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Road to Machine Learning</strong>" was written by 玩机器学习的张北海. It was last built on 2021-12-30.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
