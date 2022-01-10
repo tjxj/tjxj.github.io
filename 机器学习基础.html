@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="机器学习百科全书" />
-  <meta name="github-repo" content="yihui/bookdown-chinese" />
+  <meta name="github-repo" content="tjxj/bookdown-r2ml" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="第 4 章 机器学习基础 | R2ML" />
@@ -24,7 +24,7 @@
 <meta name="author" content="By:玩机器学习的张北海" />
 
 
-<meta name="date" content="2022-01-09" />
+<meta name="date" content="2022-01-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="数学基础.html"/>
 <link rel="next" href="机器学习模型.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
@@ -72,10 +73,12 @@
 <li><a href="./">Road to Machine Learning</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 机器学习入门指南（极简版）</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 机器学习入门指南（极简版）</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#python教程"><i class="fa fa-check"></i><b>1.1</b> Python——教程</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#python视频"><i class="fa fa-check"></i><b>1.2</b> Python——视频</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#机器学习"><i class="fa fa-check"></i><b>1.3</b> 机器学习</a><ul>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#机器学习"><i class="fa fa-check"></i><b>1.3</b> 机器学习</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#机器学习书"><i class="fa fa-check"></i><b>1.3.1</b> 机器学习——书</a></li>
 <li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#机器学习教程"><i class="fa fa-check"></i><b>1.3.2</b> 机器学习——教程</a></li>
 <li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#机器学习视频"><i class="fa fa-check"></i><b>1.3.3</b> 机器学习——视频</a></li>
@@ -83,8 +86,10 @@
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#一些经验和建议"><i class="fa fa-check"></i><b>1.4</b> 一些经验和建议</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="python基础.html"><a href="python基础.html"><i class="fa fa-check"></i><b>2</b> Python基础</a><ul>
-<li class="chapter" data-level="2.1" data-path="python基础.html"><a href="python基础.html#python"><i class="fa fa-check"></i><b>2.1</b> Python</a><ul>
+<li class="chapter" data-level="2" data-path="python基础.html"><a href="python基础.html"><i class="fa fa-check"></i><b>2</b> Python基础</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="python基础.html"><a href="python基础.html#python"><i class="fa fa-check"></i><b>2.1</b> Python</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="python基础.html"><a href="python基础.html#python学习教程"><i class="fa fa-check"></i><b>2.1.1</b> Python学习教程</a></li>
 <li class="chapter" data-level="2.1.2" data-path="python基础.html"><a href="python基础.html#python学习方法"><i class="fa fa-check"></i><b>2.1.2</b> Python学习方法</a></li>
 <li class="chapter" data-level="2.1.3" data-path="python基础.html"><a href="python基础.html#python基础系列"><i class="fa fa-check"></i><b>2.1.3</b> Python基础系列</a></li>
@@ -94,7 +99,8 @@
 <li class="chapter" data-level="2.3" data-path="python基础.html"><a href="python基础.html#pandas"><i class="fa fa-check"></i><b>2.3</b> Pandas</a></li>
 <li class="chapter" data-level="2.4" data-path="python基础.html"><a href="python基础.html#matplotlib"><i class="fa fa-check"></i><b>2.4</b> Matplotlib</a></li>
 <li class="chapter" data-level="2.5" data-path="python基础.html"><a href="python基础.html#python数据可视化"><i class="fa fa-check"></i><b>2.5</b> Python数据可视化</a></li>
-<li class="chapter" data-level="2.6" data-path="python基础.html"><a href="python基础.html#环境和ide"><i class="fa fa-check"></i><b>2.6</b> 环境和IDE</a><ul>
+<li class="chapter" data-level="2.6" data-path="python基础.html"><a href="python基础.html#环境和ide"><i class="fa fa-check"></i><b>2.6</b> 环境和IDE</a>
+<ul>
 <li class="chapter" data-level="2.6.1" data-path="python基础.html"><a href="python基础.html#如何选择ide"><i class="fa fa-check"></i><b>2.6.1</b> 如何选择IDE</a></li>
 <li class="chapter" data-level="2.6.2" data-path="python基础.html"><a href="python基础.html#pycharm"><i class="fa fa-check"></i><b>2.6.2</b> PyCharm</a></li>
 <li class="chapter" data-level="2.6.3" data-path="python基础.html"><a href="python基础.html#vscode"><i class="fa fa-check"></i><b>2.6.3</b> VSCode</a></li>
@@ -103,7 +109,8 @@
 <li class="chapter" data-level="2.7" data-path="python基础.html"><a href="python基础.html#如何阅读-python-开源项目代码"><i class="fa fa-check"></i><b>2.7</b> 如何阅读 Python 开源项目代码?</a></li>
 <li class="chapter" data-level="2.8" data-path="python基础.html"><a href="python基础.html#其他待分类"><i class="fa fa-check"></i><b>2.8</b> 其他（待分类）</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="数学基础.html"><a href="数学基础.html"><i class="fa fa-check"></i><b>3</b> 数学基础</a><ul>
+<li class="chapter" data-level="3" data-path="数学基础.html"><a href="数学基础.html"><i class="fa fa-check"></i><b>3</b> 数学基础</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="数学基础.html"><a href="数学基础.html#数学学习误区"><i class="fa fa-check"></i><b>3.1</b> 数学学习误区</a></li>
 <li class="chapter" data-level="3.2" data-path="数学基础.html"><a href="数学基础.html#机器学习与数学"><i class="fa fa-check"></i><b>3.2</b> 机器学习与数学</a></li>
 <li class="chapter" data-level="3.3" data-path="数学基础.html"><a href="数学基础.html#统计学"><i class="fa fa-check"></i><b>3.3</b> 统计学</a></li>
@@ -112,7 +119,8 @@
 <li class="chapter" data-level="3.6" data-path="数学基础.html"><a href="数学基础.html#线性代数"><i class="fa fa-check"></i><b>3.6</b> 线性代数</a></li>
 <li class="chapter" data-level="3.7" data-path="数学基础.html"><a href="数学基础.html#优化"><i class="fa fa-check"></i><b>3.7</b> 优化</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="机器学习基础.html"><a href="机器学习基础.html"><i class="fa fa-check"></i><b>4</b> 机器学习基础</a><ul>
+<li class="chapter" data-level="4" data-path="机器学习基础.html"><a href="机器学习基础.html"><i class="fa fa-check"></i><b>4</b> 机器学习基础</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="机器学习基础.html"><a href="机器学习基础.html#机器学习总览"><i class="fa fa-check"></i><b>4.1</b> 机器学习总览</a></li>
 <li class="chapter" data-level="4.2" data-path="机器学习基础.html"><a href="机器学习基础.html#机器学习的局限"><i class="fa fa-check"></i><b>4.2</b> 机器学习的局限</a></li>
 <li class="chapter" data-level="4.3" data-path="机器学习基础.html"><a href="机器学习基础.html#数据清理和格式化"><i class="fa fa-check"></i><b>4.3</b> 数据清理和格式化</a></li>
@@ -124,14 +132,16 @@
 <li class="chapter" data-level="4.9" data-path="机器学习基础.html"><a href="机器学习基础.html#评估最佳模型"><i class="fa fa-check"></i><b>4.9</b> 评估最佳模型</a></li>
 <li class="chapter" data-level="4.10" data-path="机器学习基础.html"><a href="机器学习基础.html#机器学习资源推荐"><i class="fa fa-check"></i><b>4.10</b> 机器学习资源推荐</a></li>
 <li class="chapter" data-level="4.11" data-path="机器学习基础.html"><a href="机器学习基础.html#面试竞赛经验"><i class="fa fa-check"></i><b>4.11</b> 面试&amp;竞赛经验</a></li>
-<li class="chapter" data-level="4.12" data-path="机器学习基础.html"><a href="机器学习基础.html#机器学习的书怎么读"><i class="fa fa-check"></i><b>4.12</b> 机器学习的书怎么读？</a><ul>
+<li class="chapter" data-level="4.12" data-path="机器学习基础.html"><a href="机器学习基础.html#机器学习的书怎么读"><i class="fa fa-check"></i><b>4.12</b> 机器学习的书怎么读？</a>
+<ul>
 <li class="chapter" data-level="4.12.1" data-path="机器学习基础.html"><a href="机器学习基础.html#统计学习方法"><i class="fa fa-check"></i><b>4.12.1</b> 统计学习方法</a></li>
 <li class="chapter" data-level="4.12.2" data-path="机器学习基础.html"><a href="机器学习基础.html#西瓜书"><i class="fa fa-check"></i><b>4.12.2</b> 西瓜书</a></li>
 </ul></li>
 <li class="chapter" data-level="4.13" data-path="机器学习基础.html"><a href="机器学习基础.html#机器学习工具"><i class="fa fa-check"></i><b>4.13</b> 机器学习工具</a></li>
 <li class="chapter" data-level="4.14" data-path="机器学习基础.html"><a href="机器学习基础.html#其他"><i class="fa fa-check"></i><b>4.14</b> 其他</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="机器学习模型.html"><a href="机器学习模型.html"><i class="fa fa-check"></i><b>5</b> 机器学习模型</a><ul>
+<li class="chapter" data-level="5" data-path="机器学习模型.html"><a href="机器学习模型.html"><i class="fa fa-check"></i><b>5</b> 机器学习模型</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="机器学习模型.html"><a href="机器学习模型.html#掌握机器学习算法的三重境界"><i class="fa fa-check"></i><b>5.1</b> 掌握机器学习算法的三重境界</a></li>
 <li class="chapter" data-level="5.2" data-path="机器学习模型.html"><a href="机器学习模型.html#天搞定机器学习系统连载中"><i class="fa fa-check"></i><b>5.2</b> 100天搞定机器学习系统（连载中）</a></li>
 <li class="chapter" data-level="5.3" data-path="机器学习模型.html"><a href="机器学习模型.html#回归"><i class="fa fa-check"></i><b>5.3</b> 回归</a></li>
@@ -147,37 +157,44 @@
 <li class="chapter" data-level="5.13" data-path="机器学习模型.html"><a href="机器学习模型.html#其他-1"><i class="fa fa-check"></i><b>5.13</b> 其他</a></li>
 <li class="chapter" data-level="5.14" data-path="机器学习模型.html"><a href="机器学习模型.html#学习方法"><i class="fa fa-check"></i><b>5.14</b> 学习方法</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="机器学习项目实战.html"><a href="机器学习项目实战.html"><i class="fa fa-check"></i><b>6</b> 机器学习项目实战</a><ul>
+<li class="chapter" data-level="6" data-path="机器学习项目实战.html"><a href="机器学习项目实战.html"><i class="fa fa-check"></i><b>6</b> 机器学习项目实战</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="机器学习项目实战.html"><a href="机器学习项目实战.html#数据分析篇"><i class="fa fa-check"></i><b>6.1</b> 数据分析篇</a></li>
 <li class="chapter" data-level="6.2" data-path="机器学习项目实战.html"><a href="机器学习项目实战.html#机器学习篇"><i class="fa fa-check"></i><b>6.2</b> 机器学习篇</a></li>
 <li class="chapter" data-level="6.3" data-path="机器学习项目实战.html"><a href="机器学习项目实战.html#深度学习"><i class="fa fa-check"></i><b>6.3</b> 深度学习</a></li>
 <li class="chapter" data-level="6.4" data-path="机器学习项目实战.html"><a href="机器学习项目实战.html#其他-2"><i class="fa fa-check"></i><b>6.4</b> 其他</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="深度学习基础.html"><a href="深度学习基础.html"><i class="fa fa-check"></i><b>7</b> 深度学习基础</a><ul>
+<li class="chapter" data-level="7" data-path="深度学习基础.html"><a href="深度学习基础.html"><i class="fa fa-check"></i><b>7</b> 深度学习基础</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="深度学习基础.html"><a href="深度学习基础.html#入门教程"><i class="fa fa-check"></i><b>7.1</b> 入门教程</a></li>
 <li class="chapter" data-level="7.2" data-path="深度学习基础.html"><a href="深度学习基础.html#神经网络"><i class="fa fa-check"></i><b>7.2</b> 神经网络</a></li>
 <li class="chapter" data-level="7.3" data-path="深度学习基础.html"><a href="深度学习基础.html#深度学习-1"><i class="fa fa-check"></i><b>7.3</b> 深度学习</a></li>
 <li class="chapter" data-level="7.4" data-path="深度学习基础.html"><a href="深度学习基础.html#资源推荐"><i class="fa fa-check"></i><b>7.4</b> 资源推荐</a></li>
 <li class="chapter" data-level="7.5" data-path="深度学习基础.html"><a href="深度学习基础.html#其他-3"><i class="fa fa-check"></i><b>7.5</b> 其他</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="工具和框架篇.html"><a href="工具和框架篇.html"><i class="fa fa-check"></i><b>8</b> 工具和框架篇</a><ul>
+<li class="chapter" data-level="8" data-path="工具和框架篇.html"><a href="工具和框架篇.html"><i class="fa fa-check"></i><b>8</b> 工具和框架篇</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#常见框架"><i class="fa fa-check"></i><b>8.1</b> 常见框架</a></li>
-<li class="chapter" data-level="8.2" data-path="工具和框架篇.html"><a href="工具和框架篇.html#sklearn"><i class="fa fa-check"></i><b>8.2</b> sklearn</a><ul>
+<li class="chapter" data-level="8.2" data-path="工具和框架篇.html"><a href="工具和框架篇.html#sklearn"><i class="fa fa-check"></i><b>8.2</b> sklearn</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#如何正确地实用sklearn"><i class="fa fa-check"></i><b>8.2.1</b> 如何正确地实用sklearn</a></li>
 <li class="chapter" data-level="8.2.2" data-path="工具和框架篇.html"><a href="工具和框架篇.html#sklearn入门及技巧篇"><i class="fa fa-check"></i><b>8.2.2</b> sklearn入门及技巧篇</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="工具和框架篇.html"><a href="工具和框架篇.html#tensorflow-vs-pytorch"><i class="fa fa-check"></i><b>8.3</b> TensorFlow VS PyTorch</a><ul>
+<li class="chapter" data-level="8.3" data-path="工具和框架篇.html"><a href="工具和框架篇.html#tensorflow-vs-pytorch"><i class="fa fa-check"></i><b>8.3</b> TensorFlow VS PyTorch</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#安装问题"><i class="fa fa-check"></i><b>8.3.1</b> 安装问题</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="工具和框架篇.html"><a href="工具和框架篇.html#tensorflow"><i class="fa fa-check"></i><b>8.4</b> Tensorflow</a></li>
-<li class="chapter" data-level="8.5" data-path="工具和框架篇.html"><a href="工具和框架篇.html#pytorch"><i class="fa fa-check"></i><b>8.5</b> Pytorch</a><ul>
+<li class="chapter" data-level="8.5" data-path="工具和框架篇.html"><a href="工具和框架篇.html#pytorch"><i class="fa fa-check"></i><b>8.5</b> Pytorch</a>
+<ul>
 <li class="chapter" data-level="8.5.1" data-path="工具和框架篇.html"><a href="工具和框架篇.html#pytorch教程"><i class="fa fa-check"></i><b>8.5.1</b> Pytorch教程</a></li>
 <li class="chapter" data-level="8.5.2" data-path="工具和框架篇.html"><a href="工具和框架篇.html#pytorch安装与使用"><i class="fa fa-check"></i><b>8.5.2</b> Pytorch安装与使用</a></li>
 </ul></li>
 <li class="chapter" data-level="8.6" data-path="工具和框架篇.html"><a href="工具和框架篇.html#其他-4"><i class="fa fa-check"></i><b>8.6</b> 其他</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="开源项目推荐.html"><a href="开源项目推荐.html"><i class="fa fa-check"></i><b>9</b> 开源项目推荐</a></li>
-<li class="chapter" data-level="10" data-path="免费资料下载.html"><a href="免费资料下载.html"><i class="fa fa-check"></i><b>10</b> 免费资料下载</a><ul>
+<li class="chapter" data-level="10" data-path="免费资料下载.html"><a href="免费资料下载.html"><i class="fa fa-check"></i><b>10</b> 免费资料下载</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="免费资料下载.html"><a href="免费资料下载.html#python-1"><i class="fa fa-check"></i><b>10.1</b> Python</a></li>
 <li class="chapter" data-level="10.2" data-path="免费资料下载.html"><a href="免费资料下载.html#机器学习-1"><i class="fa fa-check"></i><b>10.2</b> 机器学习</a></li>
 <li class="chapter" data-level="10.3" data-path="免费资料下载.html"><a href="免费资料下载.html#深度学习-2"><i class="fa fa-check"></i><b>10.3</b> 深度学习</a></li>
@@ -185,12 +202,14 @@
 <li class="chapter" data-level="10.5" data-path="免费资料下载.html"><a href="免费资料下载.html#数据集"><i class="fa fa-check"></i><b>10.5</b> 数据集</a></li>
 <li class="chapter" data-level="10.6" data-path="免费资料下载.html"><a href="免费资料下载.html#r"><i class="fa fa-check"></i><b>10.6</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="机器学习论文.html"><a href="机器学习论文.html"><i class="fa fa-check"></i><b>11</b> 机器学习论文</a><ul>
+<li class="chapter" data-level="11" data-path="机器学习论文.html"><a href="机器学习论文.html"><i class="fa fa-check"></i><b>11</b> 机器学习论文</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="机器学习论文.html"><a href="机器学习论文.html#如何高效读论文"><i class="fa fa-check"></i><b>11.1</b> 如何高效读论文？</a></li>
 <li class="chapter" data-level="11.2" data-path="机器学习论文.html"><a href="机器学习论文.html#机器学习ai必读论文"><i class="fa fa-check"></i><b>11.2</b> 机器学习、AI必读论文</a></li>
 <li class="chapter" data-level="11.3" data-path="机器学习论文.html"><a href="机器学习论文.html#深度学习必读论文"><i class="fa fa-check"></i><b>11.3</b> 深度学习必读论文</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="杂谈.html"><a href="杂谈.html"><i class="fa fa-check"></i><b>12</b> 杂谈</a><ul>
+<li class="chapter" data-level="12" data-path="杂谈.html"><a href="杂谈.html"><i class="fa fa-check"></i><b>12</b> 杂谈</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="杂谈.html"><a href="杂谈.html#数学的故事"><i class="fa fa-check"></i><b>12.1</b> 数学的故事</a></li>
 <li class="chapter" data-level="12.2" data-path="杂谈.html"><a href="杂谈.html#统计学-1"><i class="fa fa-check"></i><b>12.2</b> 统计学</a></li>
 <li class="chapter" data-level="12.3" data-path="杂谈.html"><a href="杂谈.html#大厂技术观察"><i class="fa fa-check"></i><b>12.3</b> 大厂技术观察</a></li>
@@ -219,7 +238,7 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="机器学习基础" class="section level1">
+<div id="机器学习基础" class="section level1" number="4">
 <h1><span class="header-section-number">第 4 章</span> 机器学习基础</h1>
 <p>自学机器学习多半不会一帆风顺，以下十个要点在自学中要高度重视，这样会少会走很多弯路：</p>
 <ol style="list-style-type: decimal">
@@ -308,7 +327,7 @@
 <li>没有对现在的爱，就没有对未来的渴望</li>
 <li>最重要的是，没有三大项就没有机器学习</li>
 </ul>
-<div id="机器学习总览" class="section level2">
+<div id="机器学习总览" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> 机器学习总览</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931375&amp;idx=1&amp;sn=c8f39826d7406a2262c4ea9cc6da9ab6&amp;chksm=8794ee05b0e367131103d97fcd0d9ef2ea83516f93c139c78da5899e1b6e52eec9bbbbe7e84e&amp;token=2004915986&amp;lang=en_US#rd">机器学习术语表</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648961426&amp;idx=2&amp;sn=0aeafeb958535ef5e8035cd92270cc66&amp;chksm=879463b8b0e3eaae24b0046d333b76bad8afc8a5e68fdcc18f1814ccfb210de8a7716c7e56be&amp;token=281192998&amp;lang=zh_CN#rd">机器学习项目流程</a></p>
@@ -330,7 +349,7 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648935460&amp;idx=1&amp;sn=57f4f096d21f56ac7a50a1a39b28f1fc&amp;chksm=87941e0eb0e3971841520fe31ec60e5d65f2c42ff4a6f793be61467027dde952981ca1339e75&amp;token=281192998&amp;lang=zh_CN#rd">吐血整理：机器学习的30个基本概念，都在这里了（手绘图解）</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648941577&amp;idx=2&amp;sn=83e8018230c863689ab0af6553250e4e&amp;chksm=87943623b0e3bf352bc65c6da9fd164d464f49db5ecc6cd4251e542e694639b27e56df8cecf9&amp;token=281192998&amp;lang=zh_CN#rd">机器学习、数据科学、人工智能、深度学习和统计学之间的区别！</a></p>
 </div>
-<div id="机器学习的局限" class="section level2">
+<div id="机器学习的局限" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> 机器学习的局限</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648936136&amp;idx=3&amp;sn=f8ac83a4ae56bb0fe1d3e9ae696368a9&amp;chksm=87941ce2b0e395f4adb46309c059f3f2bef203c30048374330115c82f50019ff6ce1de2204e7&amp;token=281192998&amp;lang=zh_CN#rd">慎用！别动不动就上机器学习！</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930565&amp;idx=1&amp;sn=9772a497b72662ec6827e45994456c9a&amp;chksm=8794eb2fb0e36239b4b4dce70973eb5a8cd7011b5112b7cfc31826a4ad28144697b28b108e48&amp;token=2004915986&amp;lang=en_US#rd">打破机器学习中的小数据集诅咒</a></p>
@@ -340,7 +359,7 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930523&amp;idx=1&amp;sn=6228788196b621aabe3b8bb5c7eef285&amp;chksm=8794eaf1b0e363e70814a55010a5ed34f6021afcccef9ebf3ee8f019c67e322988c45d0e08dd&amp;token=2004915986&amp;lang=en_US#rd">机器学习是最容易得到错误结论的一种解决方案</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930553&amp;idx=1&amp;sn=abf82738431980f37dc96762321140ee&amp;chksm=8794ead3b0e363c53e9463f72baf140d3a94efa373d038301d6f16344ff77a653c5f79b32c23&amp;token=2004915986&amp;lang=en_US#rd">要强大的“黑匣子”，还是“可解释”的机器学习</a></p>
 </div>
-<div id="数据清理和格式化" class="section level2">
+<div id="数据清理和格式化" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> 数据清理和格式化</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931017&amp;idx=1&amp;sn=c2cc1968223edb87a3483a039e36b17c&amp;chksm=8794e8e3b0e361f58b89bc24d82aaeef4b5e3122b7e8f5409c37f51d4afbce0a4048a01fd7a4&amp;token=2004915986&amp;lang=en_US#rd">数据预处理|关于标准化和归一化的一切</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648934239&amp;idx=1&amp;sn=6b605dfc6d2fb56c277f63cf94c6ef29&amp;chksm=87941575b0e39c63aa23bbfe1b8740975f14a7d4aed919ba0639e7d8cb7bbd16db35c8917756&amp;token=281192998&amp;lang=zh_CN#rd">数据缺失、混乱、重复怎么办？最全数据清洗指南</a></p>
@@ -355,7 +374,7 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648933830&amp;idx=1&amp;sn=c4776d4d61d06888ffd81b8dc2afe2ea&amp;chksm=879417ecb0e39efad4aaf3321eaa727a429d43588b995164769fb8a484886f8eef1d6dbe290a&amp;token=281192998&amp;lang=zh_CN#rd">异常检测怎么做，试试孤立随机森林算法（附代码）</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648954381&amp;idx=3&amp;sn=2502b369c266fad0a8ae6b6a57893694&amp;chksm=87944427b0e3cd3119993169f7f5f0502bcd3a475462bd73457950a85b6484dc8f23a16df3dc&amp;token=281192998&amp;lang=zh_CN#rd">机器学习：五种检测异常值的方法（附Python代码）</a></p>
 </div>
-<div id="探索性数据分析" class="section level2">
+<div id="探索性数据分析" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> 探索性数据分析</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648939449&amp;idx=2&amp;sn=fe76fba2794f78465179072353b602c0&amp;chksm=87940993b0e380852f8d139eb8c2778718a7eb6bb1adf1190aadaf31589a9005a8b7de2a15f6&amp;token=281192998&amp;lang=zh_CN#rd">Python骚操作：一行代码实现探索性数据分析</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931744&amp;idx=2&amp;sn=ec6d3397351c5bebd463ad256a594a2a&amp;chksm=8794ef8ab0e3669c5c808fad5ff04bdb56911f5adda2c3606e337967ea69d124b893bc850566&amp;token=2004915986&amp;lang=en_US#rd">推荐收藏 | 100个数据分析常用指标和术语</a></p>
@@ -364,10 +383,10 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930561&amp;idx=1&amp;sn=9432f847e7f1efe627e60e865aa7c26a&amp;chksm=8794eb2bb0e3623dbb08ea1249a2bd876f1ba6ab7fd9a30d77d51884a90ade546821187f817a&amp;token=2004915986&amp;lang=en_US#rd">10个可以快速用Python进行数据分析的小技巧</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930653&amp;idx=2&amp;sn=95819949941be58b1d7e2906aa4c09d5&amp;chksm=8794eb77b0e3626185ba6f2fd8b395ea3c5bbc73b284a4c97714560853d7e1e36fa77169380f&amp;token=2004915986&amp;lang=en_US#rd">学会五种常用异常值检测方法，亡羊补牢不如积谷防饥</a></p>
 </div>
-<div id="特征工程和特征选择" class="section level2">
+<div id="特征工程和特征选择" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> 特征工程和特征选择</h2>
 <p>有句话必须得放在前面：数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已。由此可见，特征工程尤其是特征选择在机器学习中占有相当重要的地位。</p>
-<p><img src="./files/特征工程.png"></p>
+<p><img src="files/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.png"></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648961888&amp;idx=2&amp;sn=412678a6cb6fe320100cc194763078fd&amp;chksm=8794614ab0e3e85ce9746970b1c9dd817c412461f7b6545232edcc695361615b1fdb6bbaa690&amp;token=281192998&amp;lang=zh_CN#rd">机器学习特征工程：10个基本功</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648955857&amp;idx=2&amp;sn=5f4a461d8e1410a1104f79fa98ac8bab&amp;chksm=879449fbb0e3c0edae1ba133789135a328402fdf941ad8f433cbfece7e58866eb710e1be7d26&amp;token=281192998&amp;lang=zh_CN#rd">机器学习特征工程：5 分钟了解特征工程</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648951660&amp;idx=2&amp;sn=412df170b6cc0e33263e33b8e4cd6737&amp;chksm=87945946b0e3d050fe4fc5bf7025ce11abf0ce386af99798245c40902fdf0a78646e746e09ac&amp;token=281192998&amp;lang=zh_CN#rd">机器学习特征工程：特征选择的通俗讲解</a></p>
@@ -379,7 +398,7 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930926&amp;idx=2&amp;sn=aa7ba016d447e33b99c9449e3e44ab8f&amp;chksm=8794e844b0e3615268d6190dbab6d3893a82b828bdfc4588f6776185c78585b428206a7372f1&amp;token=2004915986&amp;lang=en_US#rd">机器学习特征工程：为什么需要对数值类型的特征做归一化？</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930941&amp;idx=2&amp;sn=f973b10f4552261c2d2e9e668691c512&amp;chksm=8794e857b0e361414a3f9925e7531c64ae4206d0829bcc0dd02b730e8cc0171a915eb7447bc9&amp;token=2004915986&amp;lang=en_US#rd">机器学习特征工程：在对数据进行预处理时，应该怎样处理类别型特征？</a></p>
 </div>
-<div id="性能指标" class="section level2">
+<div id="性能指标" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> 性能指标</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929744&amp;idx=2&amp;sn=88bd5e2c1a3e492547fa3a74b57a1a41&amp;chksm=8794e7fab0e36eec2ed7a8bedeb6d9a2051429291d92592ae2616f36f3fcd60ec08c942d72fe&amp;token=2004915986&amp;lang=en_US#rd">分类之性能评估指标——Precision和Recall</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648932659&amp;idx=1&amp;sn=86868cc6562c1c30444168d356e8467c&amp;chksm=87941319b0e39a0f73835d222b48e198581fb36244958a601ca45670f373be7339779cc984a3&amp;token=2004915986&amp;lang=en_US#rd">深度研究：回归模型评价指标R2_score</a></p>
@@ -387,23 +406,23 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931963&amp;idx=3&amp;sn=bd5f6c7e2624b711ff8c422996f3f0b2&amp;chksm=8794ec51b0e36547889976ccc77501a2820c95768b69675580c30b6910836be96aa5d475612d&amp;token=2004915986&amp;lang=en_US#rd">模型评估指标AUC和ROC，这是我看到的最透彻的讲解</a><br />
 <a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648933388&amp;idx=1&amp;sn=d1a6d7a9fc253e44c0c1400114c1cf06&amp;chksm=87941626b0e39f3048ad9bbdcb4dc9893d994b81ccdf741c0e9d6b7cdb83c077f24883cbe0ed&amp;token=281192998&amp;lang=zh_CN#rd">深度研究：敏感性、特异性、精确率、召回率</a></p>
 </div>
-<div id="优化方法" class="section level2">
+<div id="优化方法" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> 优化方法</h2>
-<p><img src="./files/梯度下降.png"></p>
+<p><img src="files/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.png"></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648932090&amp;idx=1&amp;sn=dbdc939cd8dace65fdf4511b194e8285&amp;chksm=8794ecd0b0e365c644537e967040b79611af5eadbc9db9e46ac08b6f246c5431dbb0e9d6b831&amp;token=2004915986&amp;lang=en_US#rd">每个程序员都应该收藏的算法复杂度速查表</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648929438&amp;idx=1&amp;sn=08ca45889cbd330e2dc134325cf756d8&amp;chksm=8794e6b4b0e36fa2dbb3f8df6c6d4c853ccb97994875165ed041df0aad6ada2e948a68810dc4&amp;token=2004915986&amp;lang=en_US#rd%5D">【算法系列】凸优化的应用——Python求解优化问题（附代码）</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931750&amp;idx=1&amp;sn=8134db8eee0fa2bd120b24e7fc01c8e2&amp;chksm=8794ef8cb0e3669aa56aa4a32efa3fbf4c85f209805490d2b8bd3b316beb8c57d2c10a1b6edd&amp;token=2004915986&amp;lang=en_US#rd">Dropout、梯度消失/爆炸、Adam优化算法，神经网络优化算法看这一篇就够了</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931235&amp;idx=2&amp;sn=5258d235f155a93a8fecc0d8558a01e4&amp;chksm=8794e989b0e3609fdd82921f218e9c4d4a51316c15e5e38b627bc95171fef230e65391448fc9&amp;token=2004915986&amp;lang=en_US#rd">用有趣的方式解释梯度下降算法</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648932951&amp;idx=2&amp;sn=14871de61748ca34efec30ec233212ba&amp;chksm=8794107db0e3996b03479085b8faca4a1f8bc84e7658132307f5ff068211e48335e171533493&amp;token=2004915986&amp;lang=en_US#rd">一文读懂梯度下降背后的数学原理几何</a></p>
 </div>
-<div id="超参数调整" class="section level2">
+<div id="超参数调整" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> 超参数调整</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648953736&amp;idx=3&amp;sn=7ba7e399c7b9d37c27d3c6a7c4de8c19&amp;chksm=879441a2b0e3c8b4660e79af2ee52f9a207511f1ccd66de37e99d883707e1000302f7d0f1b80&amp;token=281192998&amp;lang=zh_CN#rd">机器学习：模型调参之方法论</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648950828&amp;idx=1&amp;sn=7cb34290be4625cb034c43e8b5c19bc7&amp;chksm=87945a06b0e3d31034912659a430d410ad8f1e476029add9fc77c5c437932ba727194c498562&amp;token=281192998&amp;lang=zh_CN#rd">机器学习调参这事儿,就像老中医看病。。。</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648957287&amp;idx=2&amp;sn=ffd6dcf70071db06dc93cb2cfc30929e&amp;chksm=8794734db0e3fa5bb39eb3291b8f5af4799db86f36b4a6ca684b688add92fe756130ac51c125&amp;token=281192998&amp;lang=zh_CN#rd">机器学习模型 3 个模型调优改进策略</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648958072&amp;idx=2&amp;sn=24183d03508bbc4b9423887df37aa6ce&amp;chksm=87947652b0e3ff44312af2e268da5b2c3f0925d5a04b33848639b46641b523c3a47f68a7a84c&amp;token=281192998&amp;lang=zh_CN#rd">机器学习最困难的部分：超参数调试</a></p>
 </div>
-<div id="评估最佳模型" class="section level2">
+<div id="评估最佳模型" class="section level2" number="4.9">
 <h2><span class="header-section-number">4.9</span> 评估最佳模型</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648949790&amp;idx=1&amp;sn=65c22380896eed7cde78d94f95ce8ec3&amp;chksm=87945634b0e3df22cdc23fce60666359130e705221f8319ac4509c3f1ed5b3cdbeb0caa0dd02&amp;token=281192998&amp;lang=zh_CN#rd">机器学习：模型评价指标总结</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648930995&amp;idx=1&amp;sn=24261fd7df0378a019997e635d061dbf&amp;chksm=8794e899b0e3618fb5b62f6b0591c940109becaaf3f55d52bc6f9f54207b9d987854a0627bfb&amp;token=2004915986&amp;lang=en_US#rd">Python sklearn模型选择</a></p>
@@ -414,7 +433,7 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648936765&amp;idx=2&amp;sn=055c22764dab3f3c89b05b897cc64ae2&amp;chksm=87940317b0e38a01caf33fb04525e15218ac6728e17e47ee263f61c4280b1e6a3aded3f4fe8e&amp;token=281192998&amp;lang=zh_CN#rd">最全的损失函数汇总</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648940266&amp;idx=1&amp;sn=ea0b2f49010964bdab7315fc8bd41cba&amp;chksm=87940cc0b0e385d6ed7830aa124ee7030ffb8c25f4e034a63169996a77f4f6d8862478cf9874&amp;token=281192998&amp;lang=zh_CN#rd">机器学习模型调参指南（附代码）</a></p>
 </div>
-<div id="机器学习资源推荐" class="section level2">
+<div id="机器学习资源推荐" class="section level2" number="4.10">
 <h2><span class="header-section-number">4.10</span> 机器学习资源推荐</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648943084&amp;idx=2&amp;sn=80e5720cdbc4a7e79b4dd578574d93e5&amp;chksm=87943bc6b0e3b2d0e7dea35461a21d1247111537e7b0073725dee6afbe4dda29d4aeedcf727f&amp;token=281192998&amp;lang=zh_CN#rd">自学机器学习十诫</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931349&amp;idx=1&amp;sn=ee9f32007acd0f3d9b099e4ccd0e01fa&amp;chksm=8794ee3fb0e367293f31b22e7506965c4b8e2b36e6ba564ccfedc8cd6ac3dd27413661fe5db5&amp;token=2004915986&amp;lang=en_US#rd">机器学习资源清单和路线</a></p>
@@ -428,11 +447,11 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648955844&amp;idx=2&amp;sn=7670a243049c47c640c4a956ebd8d942&amp;chksm=879449eeb0e3c0f80ba101fd8725c69f3274727812d47787c559eb16c1eb4883ff246d5b654f&amp;token=281192998&amp;lang=zh_CN#rd">哈佛 95 后小哥撰写《从零开始的机器学习》，书籍资源已开放！</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648943753&amp;idx=2&amp;sn=2319c2870bf784f5db73035930bec998&amp;chksm=87943ea3b0e3b7b54e1cd08137f12eb2fb4d20fb3e0de2c018347fc777d3de08168982acc288&amp;token=281192998&amp;lang=zh_CN#rd">Awesome！超详细的人工智能专家路线图，GitHub数天获2.1k星</a></p>
 </div>
-<div id="面试竞赛经验" class="section level2">
+<div id="面试竞赛经验" class="section level2" number="4.11">
 <h2><span class="header-section-number">4.11</span> 面试&amp;竞赛经验</h2>
 <p>知乎看到了一篇很好的算法工程师的学习技术总结，可以很好地，为大家在技术路线的成长方面提供一些方向指引，配套一些自我考核项，可以带着实践进行学习，加深理解和掌握。</p>
 <p>技术学习路线脑图一览：</p>
-<p><img src="./files/算法工程师学习路线图.png"></p>
+<p><img src="files/%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE.png"></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648933620&amp;idx=2&amp;sn=cd7b3363b8c95f02591277b5734a6961&amp;chksm=879416deb0e39fc8b76ff1915f0e381c02c3cbac737727cd40b50580131c6c562e8bc26f501d&amp;token=281192998&amp;lang=zh_CN#rd">机器学习160问</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648933605&amp;idx=1&amp;sn=3e97f7b66411bc74ae81890aab276b0a&amp;chksm=879416cfb0e39fd9e9d904faa3265b306b7f29b621717d3a460b9603d78569954133a3d4064b&amp;token=281192998&amp;lang=zh_CN#rd">2019算法岗面试经验汇总</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648938487&amp;idx=2&amp;sn=694b57381bc2baf2d26d5b14c45aadda&amp;chksm=879405ddb0e38ccb70928355745c642e02838c7706446321f5b9ad2fc81d28ae21f0bd7b2784&amp;token=281192998&amp;lang=zh_CN#rd">滴滴数据分析岗试题分享</a></p>
@@ -470,7 +489,7 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648933784&amp;idx=2&amp;sn=f58b681640f8340354624c0192382e31&amp;chksm=879417b2b0e39ea4dc4ef807afa2d4653a67216855dde631fb3170ce845af9f6f50b039f3535&amp;token=281192998&amp;lang=zh_CN#rd">面向工程师的Google面试指南！GitHub 9.8万星高赞，中文版发布</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648936009&amp;idx=1&amp;sn=67d1f479cff2c7d9e6e448530adf8111&amp;chksm=87941c63b0e395757e7bb07e4aade757ea4a19eaf68957c343f817afc4f0f6a57a565711d7cb&amp;token=281192998&amp;lang=zh_CN#rd">同样的实验室，硕士们进了BAT拿高工资，为什么博士却要挤破头进985高校？</a></p>
 </div>
-<div id="机器学习的书怎么读" class="section level2">
+<div id="机器学习的书怎么读" class="section level2" number="4.12">
 <h2><span class="header-section-number">4.12</span> 机器学习的书怎么读？</h2>
 <p>看书绝对是一种效率最低却必须在学习过程中经历的一个过程，第一次学机器学习的时候还是选定一本书，先精通一本书籍，再泛读其他书籍，其他机器学习书籍作为查缺补漏的教材或者参考资料。<br />
 其实入门的话感觉还是要看一些视频，ng大大的最方便，台湾有个机器学习基石，也不错，但是视频永远只能入门，而看书，像prml的作用也只是夯实基础，适当在感兴趣领域追一些paper，也是很有帮助的。<br />
@@ -478,7 +497,7 @@
 一、反复重复推导过程；<br />
 二、实践代码，将数学推导与数据的特点，如维度等建立联系；<br />
 三、看不懂正常，多翻几本书比较着看，然后上网搜推导过程</p>
-<div id="统计学习方法" class="section level3">
+<div id="统计学习方法" class="section level3" number="4.12.1">
 <h3><span class="header-section-number">4.12.1</span> 统计学习方法</h3>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931603&amp;idx=1&amp;sn=5a2e403d148aca27965f73ad5fc86652&amp;chksm=8794ef39b0e3662f206b9ddbd83afa82fa74eefc81b40f969fcfde927eb926eb7f261733baec&amp;token=2004915986&amp;lang=en_US#rd">墙裂推荐！统计学习方法(第2版) [笔记, 代码]</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931510&amp;idx=1&amp;sn=37c84511b7393b49a8a962406e710a62&amp;chksm=8794ee9cb0e3678a30a999967480aeae63e030d5053404ff39c802ce6c3f3d2c18027c5e2b18&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P2：感知机数学推导</a></p>
@@ -487,13 +506,13 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931520&amp;idx=1&amp;sn=16e9a254bc6bbcafdd11a762f5a14562&amp;chksm=8794eeeab0e367fccffb13741bd7c825880e1e653a217086ef49c84b15553a42a66fb2f7170c&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P5：决策树公式推导</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931539&amp;idx=2&amp;sn=3c3688e38cf78e555bb3918707b48851&amp;chksm=8794eef9b0e367efd6b6e5e9490c0ed7ebc6d542261a939f9b37793242c90c99b578291ee017&amp;token=2004915986&amp;lang=en_US#rd">《统计学习方法》极简笔记P6：逻辑回归算法推导</a></p>
 </div>
-<div id="西瓜书" class="section level3">
+<div id="西瓜书" class="section level3" number="4.12.2">
 <h3><span class="header-section-number">4.12.2</span> 西瓜书</h3>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648931766&amp;idx=1&amp;sn=8d819ff1d7b2aa9499ef71e906dc129f&amp;chksm=8794ef9cb0e3668a85bfa725c77b7ca93aa586863b6acf07a37effcb13c1970f67be800fbabd&amp;token=2004915986&amp;lang=en_US#rd">《机器学习》周志华西瓜书 笔记/习题答案</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648938444&amp;idx=1&amp;sn=7f3a38b85cd221b7d53c7a6d802a6748&amp;chksm=879405e6b0e38cf0f4dc2e5739ffc3d6cd1b0c8b49fd57597b1dd8936635102b33b253be1d09&amp;token=281192998&amp;lang=zh_CN#rd">周志华新作《机器学习理论导引》阅读攻略</a></p>
 </div>
 </div>
-<div id="机器学习工具" class="section level2">
+<div id="机器学习工具" class="section level2" number="4.13">
 <h2><span class="header-section-number">4.13</span> 机器学习工具</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648960771&amp;idx=1&amp;sn=4018c10f946c354be3b6f742222f61d6&amp;chksm=87947d29b0e3f43ff29d42282ec40dc0dd1b2e46100f66805a81034ffc9661886b5f02afbcef&amp;token=281192998&amp;lang=zh_CN#rd">决策树可视化，被惊艳到了！</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648960900&amp;idx=1&amp;sn=1ec367b0410d0a50015b93921bffc07a&amp;chksm=87947daeb0e3f4b896b611bae0ee6bf809c4e60783039b89337cee9b88a81c7f8e643b146c4f&amp;token=281192998&amp;lang=zh_CN#rd">开发机器学习APP，太简单了</a></p>
@@ -501,7 +520,7 @@
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648961834&amp;idx=2&amp;sn=ba0b6f98a0f2e5e376b79446d1f661dc&amp;chksm=87946100b0e3e816ad84db6aa6bc8e620c2e186c61dbdaf2ab17e5a462e34c14daf6b7f84ad4&amp;token=281192998&amp;lang=zh_CN#rd">2021年Python十佳机器学习库大盘点</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648947068&amp;idx=3&amp;sn=069a34fd607ec9c3a66799b9ba59309d&amp;chksm=87942b56b0e3a24087df2953763b2e0e717b76998c9fdf54064d3ac11f29bc1efbe7da006198&amp;token=281192998&amp;lang=zh_CN#rd">2021 年最值得学习的 5 大机器学习编程语言！</a></p>
 </div>
-<div id="其他" class="section level2">
+<div id="其他" class="section level2" number="4.14">
 <h2><span class="header-section-number">4.14</span> 其他</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648938476&amp;idx=2&amp;sn=127da87d1f6746658047e0128d65efb4&amp;chksm=879405c6b0e38cd0de0a0237f53d336de4b21be29c5561cf891131dd7b3aeb3d86c761968e43&amp;token=281192998&amp;lang=zh_CN#rd">机器学习Tips：关于Scikit-Learn的 10 个小秘密</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648961606&amp;idx=2&amp;sn=70a647674b939f325b38758bbdf3fd87&amp;chksm=8794606cb0e3e97abe5a1178f18c7cbcf29d3ecf354bedb2e17bb089b72e81eb8eac021116e7&amp;token=281192998&amp;lang=zh_CN#rd">机器学习初学者绕不开的 15 个 Scikit-Learn 重要技能！</a></p>
