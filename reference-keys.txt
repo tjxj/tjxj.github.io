@@ -1,4 +1,6 @@
 机器学习入门指南极简版
+python
+python书
 python教程
 python视频
 机器学习
@@ -8,7 +10,7 @@ python视频
 机器学习数学基础
 一些经验和建议
 python基础
-python
+python-1
 python学习教程
 python学习方法
 python基础系列
@@ -89,7 +91,7 @@ pytorch安装与使用
 其他-4
 开源项目推荐
 免费资料下载
-python-1
+python-2
 机器学习-1
 深度学习-2
 其他-5
