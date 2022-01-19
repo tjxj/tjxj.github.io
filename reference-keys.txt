@@ -11,8 +11,7 @@ python视频
 一些经验和建议
 python基础
 python-1
-python学习教程
-python学习方法
+python学习教程方法
 python基础系列
 python库
 numpy
